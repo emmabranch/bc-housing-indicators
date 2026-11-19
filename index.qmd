@@ -56,7 +56,7 @@ latest_period <- setNames(framework$latest_period, framework$indicator_id)
 
 # Overview
 
-## Row {height="430px"}
+## Row {height="475px"}
 
 ```{r}
 #| label: hero
@@ -77,18 +77,30 @@ stripes <- paste(sprintf(
 n_green_hto <- sum(munis_sc$indicator_id == "HTO_Y1" & munis_sc$status == "Green")
 n_rated_hto <- sum(munis_sc$indicator_id == "HTO_Y1" & munis_sc$status %in% c("Green", "Amber", "Red"))
 
+bc_vac_latest <- bc_sc |> filter(indicator_id == "VAC")
+glance_item <- function(n, label) div(class = "glance-item", div(class = "glance-n", n), div(class = "glance-l", label))
+
 div(class = "hero",
-  div(class = "hero-text",
-    div(class = "eyebrow", "Independent portfolio project · public data"),
-    h1(class = "hero-title", "40 BC municipalities.", tags$br(),
-       span(class = "hero-accent", "One documented housing scorecard.")),
-    p(class = "hero-lede",
-      "Housing Supply Act targets, core housing need, affordability, rental vacancy, and new supply for every municipality with a Housing Target Order, compared with British Columbia. ",
-      sprintf("%d of %d municipalities assessed so far met their Year 1 housing target.", n_green_hto, n_rated_hto)),
-    div(class = "hero-buttons",
-      a(class = "btn-pill solid", href = "#scorecard", "Explore the scorecard"),
-      a(class = "btn-pill ghost", href = "#map", "Open the map"),
-      a(class = "btn-pill ghost", href = "reports/vancouver.html", "Example report card"))
+  div(class = "hero-top",
+    div(class = "hero-text",
+      div(class = "eyebrow", "Independent portfolio project \u00b7 public data"),
+      h1(class = "hero-title", "40 BC municipalities.", tags$br(),
+         span(class = "hero-accent", "One documented housing scorecard.")),
+      p(class = "hero-lede",
+        "Housing Supply Act targets, core housing need, affordability, rental vacancy, and new supply for every municipality with a Housing Target Order, compared with British Columbia. ",
+        sprintf("%d of %d municipalities assessed so far met their Year 1 housing target.", n_green_hto, n_rated_hto)),
+      div(class = "hero-buttons",
+        a(class = "btn-pill solid", href = "#scorecard", "Explore the scorecard"),
+        a(class = "btn-pill ghost", href = "#map", "Open the map"),
+        a(class = "btn-pill ghost", href = "reports/vancouver.html", "Example report card"))
+    ),
+    div(class = "hero-glance", `aria-label` = "At a glance",
+      div(class = "glance-title", "At a glance"),
+      glance_item(nrow(munis_sc |> distinct(geo_uid)), "municipalities with Housing Target Orders"),
+      glance_item(sprintf("%d of %d", n_green_hto, n_rated_hto), "met their Year 1 housing target"),
+      glance_item(fmt_value("VAC", bc_vac_latest$latest_value),
+                  sprintf("BC rental vacancy rate, October %d", bc_vac_latest$latest_year))
+    )
   ),
   div(class = "hero-stripes",
     HTML(sprintf('<svg viewBox="0 0 %d 1" preserveAspectRatio="none" role="img" aria-label="BC rental vacancy rate by year, %d to %d">%s</svg>',
