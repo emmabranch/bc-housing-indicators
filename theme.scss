@@ -52,3 +52,16 @@ html { scroll-padding-top: 64px; }
 }
 
 .card h3 { font-size: 1.15rem; margin-top: 1.2rem; }
+
+/* ---------- Breathing room ---------- */
+/* Centre the content at a readable width, with wider gaps between panels */
+.dashboard-page > .bslib-grid {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 32px 40px !important;
+  gap: 28px !important;
+}
+.dashboard-page .bslib-grid .bslib-grid { gap: 24px !important; }
+.card-header { padding: 1.1rem 1.5rem 1rem; background-position: left 1.5rem bottom 0.3rem; }
+.card-body { padding: 0.9rem 1.5rem 1.4rem; }
