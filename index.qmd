@@ -1,0 +1,318 @@
+---
+title: "BC Municipal Housing Indicators"
+author: "Emma Branch"
+format:
+  dashboard:
+    orientation: rows
+    scrolling: true
+    theme: cosmo
+    css: styles.css
+    nav-buttons:
+      - icon: github
+        href: https://github.com/emmabranch/bc-housing-indicators
+        aria-label: GitHub repository
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(htmltools)
+library(reactable)
+library(leaflet)
+library(sf)
+source("R/dashboard_helpers.R")
+
+framework  <- read_csv("data/indicator_framework.csv", show_col_types = FALSE)
+scorecard  <- read_csv("data/scorecard_latest.csv", col_types = cols(geo_uid = "c", .default = col_guess()))
+long       <- read_csv("data/indicators_long.csv",  col_types = cols(geo_uid = "c", .default = col_guess()))
+targets    <- read_csv("data/housing_targets.csv",  col_types = cols(geo_uid = "c", .default = col_guess()))
+boundaries <- st_read("data/municipal_boundaries.geojson", quiet = TRUE)
+
+headline_ids <- c("HTO_Y1", "COMPL_RATE", "CHN_ALL", "CHN_RENT", "UNAFF_RENT", "VAC")
+short_names <- c(
+  HTO_Y1 = "Housing target, Year 1", COMPL_RATE = "Completions per 1,000 households",
+  CHN_ALL = "Core housing need", CHN_RENT = "Renters in core housing need",
+  UNAFF_RENT = "Renters paying 30%+", VAC = "Rental vacancy rate"
+)
+
+munis_sc <- scorecard |> filter(geo_level == "Municipality")
+bc_sc    <- scorecard |> filter(geo_uid == "59")
+latest_period <- setNames(framework$latest_period, framework$indicator_id)
+```
+
+# Overview
+
+## Row {height="70px"}
+
+::: {.card .disclaimer}
+**Independent portfolio project.** Built from public data by Emma Branch. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Thresholds are illustrative. See *About* for sources and limitations.
+:::
+
+## Row {height="470px"}
+
+```{r}
+#| title: Headline indicators across the 40 municipalities with Housing Target Orders
+comparator_text <- function(id) {
+  bc <- bc_sc |> filter(indicator_id == id)
+  switch(id,
+    HTO_Y1     = "Target: 100% of Year 1 target",
+    VAC        = sprintf("Reference: 3%% (BC %s, %s)", fmt_value("VAC", bc$latest_value), bc$latest_year),
+    sprintf("Benchmark: BC %s (%s)", fmt_value(id, bc$latest_value), bc$latest_year))
+}
+period_text <- function(id) {
+  switch(id,
+    HTO_Y1     = "Year 1 periods end 2024 to 2025, by group",
+    COMPL_RATE = sprintf("Average %d to %d", latest_period[["COMPL_RATE"]] - 2, latest_period[["COMPL_RATE"]]),
+    CHN_ALL = , CHN_RENT = , UNAFF_RENT = "Census 2021",
+    VAC        = sprintf("October %d", latest_period[["VAC"]]))
+}
+
+tiles <- lapply(headline_ids, function(id) {
+  counts <- munis_sc |> filter(indicator_id == id) |> count(status)
+  counts <- setNames(counts$n, counts$status)
+  rated  <- sum(counts[intersect(c("Green", "Amber", "Red"), names(counts))])
+  green  <- if ("Green" %in% names(counts)) counts[["Green"]] else 0
+  div(class = "kpi-tile",
+      div(class = "kpi-name", short_names[[id]]),
+      div(class = "kpi-headline", span(class = "kpi-big", green),
+          span(class = "kpi-of", sprintf(" of %d rated municipalities are Green", rated))),
+      status_bar(counts),
+      status_legend_line(counts),
+      div(class = "kpi-meta", comparator_text(id)),
+      div(class = "kpi-meta", period_text(id)))
+})
+div(class = "kpi-grid", tiles)
+```
+
+## Row
+
+```{r}
+#| title: Housing target progress, Year 1 (net new units as % of Year 1 target)
+hto <- targets |>
+  filter(!is.na(y1_pct_of_target)) |>
+  left_join(munis_sc |> filter(indicator_id == "HTO_Y1") |> select(geo_uid, status), by = "geo_uid") |>
+  arrange(desc(y1_pct_of_target))
+max_pct <- max(hto$y1_pct_of_target)
+rows <- lapply(seq_len(nrow(hto)), function(i) {
+  r <- hto[i, ]; st <- style_for(r$status)
+  w <- 100 * min(r$y1_pct_of_target, max_pct) / max_pct
+  tip <- sprintf("%s (Group %d): %s of %s net new units, %s of Year 1 target. %s.",
+                 r$municipality, r$hto_group, format(r$y1_net_new, big.mark = ","),
+                 format(r$target_y1, big.mark = ","), fmt_value("HTO_Y1", r$y1_pct_of_target), r$status)
+  div(class = "hbar-row", title = tip,
+      div(class = "hbar-label", r$municipality, span(class = "muted", sprintf(" G%d", r$hto_group))),
+      div(class = "hbar-track",
+          div(class = "hbar-fill", style = sprintf("width:%.1f%%;background:%s;", w, st$fill)),
+          div(class = "hbar-target", style = sprintf("left:%.1f%%;", 100 * 100 / max_pct))),
+      div(class = "hbar-value", status_chip(r$status, fmt_value("HTO_Y1", r$y1_pct_of_target))))
+})
+div(class = "hbar-chart",
+    div(class = "hbar-note", "Dashed line = 100% of Year 1 target. Group 4 (10 municipalities) not yet assessed. Hover a row for unit counts."),
+    rows)
+```
+
+```{r}
+#| title: Rental vacancy rate, British Columbia, October survey
+bc_vac <- long |> filter(geo_uid == "59", indicator_id == "VAC", !is.na(value))
+div(
+  svg_linechart(bc_vac$year, bc_vac$value, ref = 3, ref_label = "3% reference",
+                y_label = "BC rental vacancy rate by year",
+                value_fmt = function(v) paste0(formatC(v, format = "f", digits = 1), "%")),
+  p(class = "muted small",
+    "Purpose-built rental units. Hover a point for the value. CMHC (2026) notes the balanced vacancy rate varies by market, so 3% is a reference point, not a target. Source: Adapted from CMHC, Rental Market Survey.")
+)
+```
+
+# Scorecard
+
+## Row
+
+```{r}
+#| title: Municipal scorecard (latest available values)
+wide <- munis_sc |>
+  filter(indicator_id %in% headline_ids) |>
+  select(geo_uid, geo_name, hto_group, indicator_id, latest_value, latest_year,
+         status, out_of_date, latest_quality) |>
+  pivot_wider(names_from = indicator_id,
+              values_from = c(latest_value, latest_year, status, out_of_date, latest_quality),
+              names_glue = "{indicator_id}__{.value}")
+
+trend <- function(id, from) {
+  long |> filter(indicator_id == id, year >= from, geo_level == "Municipality") |>
+    group_by(geo_uid) |> summarise(years = list(year), values = list(value), .groups = "drop") |>
+    rename_with(~ paste0(id, "_", .x), c(years, values))
+}
+tbl <- wide |>
+  left_join(trend("VAC", 2010), by = "geo_uid") |>
+  left_join(trend("COMPL", 2010), by = "geo_uid") |>
+  arrange(hto_group, geo_name)
+
+kpi_col <- function(id) {
+  colDef(
+    name = short_names[[id]], minWidth = 125, align = "center", html = TRUE,
+    cell = function(value, index) {
+      r <- tbl[index, ]
+      v <- r[[paste0(id, "__latest_value")]]
+      s <- r[[paste0(id, "__status")]]
+      yr <- r[[paste0(id, "__latest_year")]]
+      ood <- isTRUE(r[[paste0(id, "__out_of_date")]])
+      q <- r[[paste0(id, "__latest_quality")]]
+      tip <- paste0(if (!is.na(yr)) paste0("Year ", yr) else "No year",
+                    if (!is.na(q)) paste0(". Quality: ", q) else "",
+                    if (ood) ". Latest value is older than the most recent survey year" else "")
+      as.character(status_chip(s, fmt_value(id, v), tooltip = tip, out_of_date = ood))
+    }
+  )
+}
+
+cols <- list(
+  geo_name  = colDef(name = "Municipality", minWidth = 170, sticky = "left",
+                     filterable = TRUE, style = list(fontWeight = 600)),
+  hto_group = colDef(name = "Group", width = 70, align = "center", filterable = TRUE)
+)
+for (id in headline_ids) cols[[paste0(id, "__latest_value")]] <- kpi_col(id)
+cols[["VAC_values"]] <- colDef(
+  name = "Vacancy trend, 2010 on", minWidth = 135, html = TRUE, sortable = FALSE,
+  cell = function(value, index) as.character(svg_sparkline(
+    tbl$VAC_years[[index]], tbl$VAC_values[[index]], ref = 3, label = "Vacancy",
+    value_fmt = function(v) paste0(v, "%"))))
+cols[["COMPL_values"]] <- colDef(
+  name = "Completions trend, 2010 on", minWidth = 135, html = TRUE, sortable = FALSE,
+  cell = function(value, index) as.character(svg_sparkline(
+    tbl$COMPL_years[[index]], tbl$COMPL_values[[index]], label = "Completions",
+    value_fmt = function(v) format(v, big.mark = ","))))
+
+show_cols <- c("geo_name", "hto_group", paste0(headline_ids, "__latest_value"), "VAC_values", "COMPL_values")
+hidden <- setdiff(names(tbl), show_cols)
+for (h in hidden) cols[[h]] <- colDef(show = FALSE)
+
+div(
+  reactable(
+    tbl |> select(all_of(show_cols), everything()),
+    columns = cols, pagination = FALSE, highlight = TRUE, compact = TRUE,
+    searchable = TRUE, defaultSorted = list(hto_group = "asc"),
+    theme = reactableTheme(headerStyle = list(fontSize = "0.8rem", color = "#52514e"))
+  ),
+  p(class = "muted small",
+    "✓ Green, ! Amber, ✕ Red, – No data, … Not yet assessed. † = latest value older than the most recent survey year (later years suppressed). Hover a value for year and data quality. Sparklines: dashed line on vacancy = 3% reference.")
+)
+```
+
+# Map
+
+## Row
+
+```{r}
+#| title: Status by municipality (choose an indicator, top right)
+map_data <- boundaries |>
+  left_join(munis_sc |> filter(indicator_id %in% headline_ids) |>
+              select(geo_uid, indicator_id, latest_value, latest_year, status),
+            by = "geo_uid", relationship = "many-to-many")
+
+popup_for <- function(gid) {
+  r <- munis_sc |> filter(geo_uid == gid, indicator_id %in% headline_ids)
+  name <- r$geo_name[1]; grp <- r$hto_group[1]
+  lines <- vapply(headline_ids, function(id) {
+    x <- r |> filter(indicator_id == id)
+    sprintf("<tr><td>%s</td><td style='text-align:right'>%s</td><td>%s %s</td></tr>",
+            short_names[[id]], fmt_value(id, x$latest_value), style_for(x$status)$icon, x$status)
+  }, character(1))
+  sprintf("<strong>%s</strong> (Group %s)<table class='popup-table'>%s</table>", name, grp, paste(lines, collapse = ""))
+}
+popups <- setNames(vapply(boundaries$geo_uid, popup_for, character(1)), boundaries$geo_uid)
+
+m <- leaflet(height = 650, options = leafletOptions(minZoom = 5)) |>
+  addProviderTiles("Esri.WorldGrayCanvas")
+for (id in headline_ids) {
+  d <- map_data |> filter(indicator_id == id)
+  m <- m |> addPolygons(
+    data = d, group = short_names[[id]],
+    fillColor = unname(vapply(d$status, function(s) style_for(s)$fill, character(1))),
+    fillOpacity = 0.75, color = "#ffffff", weight = 1.5,
+    label = sprintf("%s: %s (%s)", d$municipality,
+                    vapply(d$latest_value, function(v) fmt_value(id, v), character(1)), d$status),
+    popup = unname(popups[d$geo_uid]),
+    highlightOptions = highlightOptions(weight = 3, color = "#0b0b0b", bringToFront = TRUE)
+  )
+}
+leg <- status_style |> filter(status %in% c("Green", "Amber", "Red", "No data", "Not yet assessed"))
+m |>
+  addLayersControl(baseGroups = unname(short_names[headline_ids]),
+                   options = layersControlOptions(collapsed = FALSE)) |>
+  addLegend("bottomleft", colors = leg$fill,
+            labels = paste(leg$icon, leg$status), opacity = 0.9, title = "Status") |>
+  setView(lng = -123.0, lat = 49.6, zoom = 7)
+```
+
+# Indicator framework
+
+## Row
+
+```{r}
+#| title: Indicator framework
+reactable(
+  framework |> select(indicator_name, kpi_type, domain, definition, unit, source,
+                      frequency, latest_period, comparator, rag_rule, limitations),
+  columns = list(
+    indicator_name = colDef(name = "Indicator", minWidth = 160, style = list(fontWeight = 600), sticky = "left"),
+    kpi_type = colDef(name = "Type", minWidth = 100),
+    domain = colDef(name = "Domain", minWidth = 90),
+    definition = colDef(name = "Definition", minWidth = 280),
+    unit = colDef(name = "Unit", minWidth = 110),
+    source = colDef(name = "Source", minWidth = 170),
+    frequency = colDef(name = "Frequency", minWidth = 110),
+    latest_period = colDef(name = "Latest", minWidth = 65),
+    comparator = colDef(name = "Comparator", minWidth = 130, na = "None"),
+    rag_rule = colDef(name = "Status rule", minWidth = 220),
+    limitations = colDef(name = "Limitations", minWidth = 320)
+  ),
+  pagination = FALSE, compact = TRUE, wrap = TRUE, bordered = TRUE,
+  theme = reactableTheme(cellStyle = list(fontSize = "0.82rem"), headerStyle = list(fontSize = "0.8rem"))
+)
+```
+
+# About
+
+## Row
+
+::: {.card title="About this project"}
+
+### Purpose
+
+An independent portfolio project showing how operational and performance data for housing could be brought together into a documented indicator framework and a corporate-style scorecard. It covers the 40 municipalities with Housing Target Orders under BC's *Housing Supply Act*, with British Columbia as a benchmark.
+
+**This is not an official product.** It is not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Red, amber, and green thresholds are illustrative choices documented in the indicator framework, not official standards.
+
+### Data sources
+
+- **Statistics Canada**, Census of Population 2016 and 2021, Table 98-10-0259-01, *Housing indicators by tenure*. Statistics Canada Open Licence.
+- **CMHC Housing Market Information Portal**: Rental Market Survey (vacancy rate, average rent, average rent change) and Starts and Completions Survey (completions), accessed with the `cmhc` R package. *Adapted from Canada Mortgage and Housing Corporation, Housing Market Information Portal, accessed November 2026. This information is reproduced and distributed on an "as is" basis with the permission of CMHC.*
+- **Housing Supply Act targets and Year 1 results**: BC Government news releases and municipal progress reports, with some values from the Storeys housing targets tracker (secondary). Each value's source and verification status is recorded in `data/housing_targets.csv`.
+- **Boundaries**: Statistics Canada, 2021 Census cartographic boundary files (census subdivisions). Basemap: Esri World Gray Canvas.
+
+### Methods in brief
+
+- R pipeline: `R/01` to `R/06` download, verify, and tidy the data; `R/05_build_indicators.R` builds the indicator database, scorecard, framework, and data dictionary.
+- All joins use Statistics Canada census subdivision codes, not names (names are not unique).
+- BC benchmarks were checked against Statistics Canada's published figures (core housing need 14.9% in 2016 and 13.4% in 2021; renters 29.9% and 24.7%), and match exactly.
+
+### Key limitations
+
+- Census indicators are from 2021, the latest available. 2020 incomes included temporary pandemic benefits, which likely lowered measured need.
+- CMHC rental data cover purpose-built rentals only, and values are suppressed when unreliable; latest values older than the most recent survey year are flagged.
+- Housing target Year 1 periods differ by group, and Group 4 results were not yet published at the time of compilation.
+- CMHC completions are gross; Housing Supply Act net new units subtract demolitions, so the two do not match.
+
+:::
+
+```{r}
+#| title: Data quality log
+#| output: asis
+log_lines <- readLines("qa/data_quality_log.md", warn = FALSE)
+log_lines <- log_lines[!grepl("^#", log_lines)]   # drop the file's own heading
+cat(log_lines, sep = "\n")
+```

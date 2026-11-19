@@ -1,0 +1,32 @@
+file,column,type,description
+municipalities.csv,municipality,text,Municipality display name
+municipalities.csv,census_name,text,Name as it appears in Statistics Canada tables (not unique)
+municipalities.csv,csd_type,text,"Census subdivision type: CY city, DM district municipality, T town"
+municipalities.csv,geo_uid,text,Statistics Canada census subdivision code (2021). Primary join key
+municipalities.csv,hto_group,integer,Housing Target Order group (1 to 4)
+housing_targets.csv,target_5yr,integer,Cumulative five-year net new unit target
+housing_targets.csv,target_y1,integer,Year 1 net new unit target
+housing_targets.csv,y1_net_new,integer,Net new units reported for Year 1 (completions minus demolitions)
+housing_targets.csv,y1_pct_of_target,number,y1_net_new as a percentage of target_y1
+housing_targets.csv,y1_period_start / y1_period_end,date,Year 1 reporting period for the municipality's group
+housing_targets.csv,target_src / y1_src,text,"Source codes: G1T, G2T, G3R = BC Government news releases; STY = Storeys tracker (secondary)"
+housing_targets.csv,target_src_url / y1_src_url,text,Source URLs
+housing_targets.csv,y1_src_type,text,Primary (BC Government) or Secondary (news tracker)
+housing_targets.csv,y1_verified_primary,logical,TRUE if the Year 1 value was checked against a primary source
+indicators_long.csv,geo_uid,text,Census subdivision code; 59 = British Columbia
+indicators_long.csv,geo_name,text,Geography name
+indicators_long.csv,geo_level,text,Province or Municipality
+indicators_long.csv,hto_group,integer,Housing Target Order group; blank for BC
+indicators_long.csv,indicator_id,text,Indicator code; see indicator_framework.csv
+indicators_long.csv,year,integer,"Reference year (Census year, CMHC survey year, or end year of target period)"
+indicators_long.csv,value,number,Indicator value in the unit given in indicator_framework.csv; blank if suppressed or unavailable
+indicators_long.csv,quality,text,"CMHC reliability rating, Census symbol meaning, or target source verification status"
+scorecard_latest.csv,kpi_type,text,Headline KPI (RAG) or Supporting
+scorecard_latest.csv,latest_year / latest_value,integer / number,"Most recent year with a non-missing value, and that value"
+scorecard_latest.csv,latest_quality,text,Quality note for the latest value
+scorecard_latest.csv,prior_year / prior_value,integer / number,"Previous year with a value (for Census, 2016)"
+scorecard_latest.csv,change_from_prior,number,latest_value minus prior_value
+scorecard_latest.csv,comparator_value,number,"Target, benchmark (BC value), or reference value used for status"
+scorecard_latest.csv,status,text,"Green, Amber, Red, Benchmark, No data, Not yet assessed, Not applicable, or Not rated"
+scorecard_latest.csv,out_of_date,logical,TRUE if the latest value is older than the most recent year published for any municipality
+indicator_framework.csv,(all columns),text,"Indicator metadata: definition, source, frequency, latest period, comparator, RAG rule, limitations"

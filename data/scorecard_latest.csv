@@ -1,0 +1,370 @@
+geo_uid,geo_name,geo_level,hto_group,indicator_id,kpi_type,latest_year,latest_value,latest_quality,prior_year,prior_value,change_from_prior,comparator_value,status,out_of_date
+59,British Columbia,Province,,CHN_ALL,Headline KPI (RAG),2021,13.4,,2016,14.9,-1.5,13.4,Benchmark,FALSE
+59,British Columbia,Province,,CHN_RENT,Headline KPI (RAG),2021,24.7,,2016,29.9,-5.199999999999999,24.7,Benchmark,FALSE
+59,British Columbia,Province,,COMPL,Supporting,2025,51269,,2024,35578,15691,,Not rated,FALSE
+59,British Columbia,Province,,COMPL_RATE,Headline KPI (RAG),2025,19.2,,,,,19.2,Benchmark,FALSE
+59,British Columbia,Province,,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not applicable,FALSE
+59,British Columbia,Province,,RENT_AVG,Supporting,2025,1823,Excellent,2024,1753,70,,Not rated,FALSE
+59,British Columbia,Province,,RENT_CHG,Supporting,2025,3.4,Very good,2024,4,-0.6000000000000001,,Not rated,FALSE
+59,British Columbia,Province,,UNAFF_RENT,Headline KPI (RAG),2021,37.8,,2016,43.3,-5.5,37.8,Benchmark,FALSE
+59,British Columbia,Province,,VAC,Headline KPI (RAG),2025,3.5,Excellent,2024,1.9,1.6,3,Green,FALSE
+5909052,Abbotsford,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,10,,2016,12.7,-2.6999999999999993,13.4,Green,FALSE
+5909052,Abbotsford,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,20.7,,2016,28.1,-7.400000000000002,24.7,Green,FALSE
+5909052,Abbotsford,Municipality,1,COMPL,Supporting,2025,838,,2024,436,402,,Not rated,FALSE
+5909052,Abbotsford,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,12.6,,,,,19.2,Red,FALSE
+5909052,Abbotsford,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,58.9,Verified against primary source,,,,100,Red,FALSE
+5909052,Abbotsford,Municipality,1,RENT_AVG,Supporting,2025,1470,Excellent,2024,1403,67,,Not rated,FALSE
+5909052,Abbotsford,Municipality,1,RENT_CHG,Supporting,2025,5.6,Good,2023,7,-1.4000000000000004,,Not rated,FALSE
+5909052,Abbotsford,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,33.4,,2016,38.5,-5.100000000000001,37.8,Green,FALSE
+5909052,Abbotsford,Municipality,1,VAC,Headline KPI (RAG),2025,2.8,Very good,2024,1.3,1.4999999999999998,3,Amber,FALSE
+5915011,Delta,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,11.2,,2016,11.7,-0.5,13.4,Green,FALSE
+5915011,Delta,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,23.6,,2016,30,-6.399999999999999,24.7,Green,FALSE
+5915011,Delta,Municipality,1,COMPL,Supporting,2025,294,,2024,504,-210,,Not rated,FALSE
+5915011,Delta,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,9.9,,,,,19.2,Red,FALSE
+5915011,Delta,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,109.1,"Secondary source, not independently verified",,,,100,Green,FALSE
+5915011,Delta,Municipality,1,RENT_AVG,Supporting,2025,1676,Excellent,2024,1517,159,,Not rated,FALSE
+5915011,Delta,Municipality,1,RENT_CHG,Supporting,2023,11.4,Fair (Use with Caution),2022,4.7,6.7,,Not rated,TRUE
+5915011,Delta,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,33.1,,2016,36.7,-3.6000000000000014,37.8,Green,FALSE
+5915011,Delta,Municipality,1,VAC,Headline KPI (RAG),2025,1.5,Excellent,2024,0.7,0.8,3,Red,FALSE
+5915046,District of North Vancouver,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,11.5,,2016,10.5,1,13.4,Green,FALSE
+5915046,District of North Vancouver,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,23.5,,2016,26.9,-3.3999999999999986,24.7,Green,FALSE
+5915046,District of North Vancouver,Municipality,1,COMPL,Supporting,2025,560,,2024,543,17,,Not rated,FALSE
+5915046,District of North Vancouver,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,13.4,,,,,19.2,Red,FALSE
+5915046,District of North Vancouver,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,100.2,"Secondary source, not independently verified",,,,100,Green,FALSE
+5915046,District of North Vancouver,Municipality,1,RENT_AVG,Supporting,2025,2683,Very good,2024,2474,209,,Not rated,FALSE
+5915046,District of North Vancouver,Municipality,1,RENT_CHG,Supporting,2023,6.6,Good,2020,2.8,3.8,,Not rated,TRUE
+5915046,District of North Vancouver,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,42.1,,2016,43.8,-1.6999999999999957,37.8,Red,FALSE
+5915046,District of North Vancouver,Municipality,1,VAC,Headline KPI (RAG),2025,3.3,Very good,2024,2.9,0.3999999999999999,3,Green,FALSE
+5933042,Kamloops,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,9.7,,2016,12,-2.3000000000000007,13.4,Green,FALSE
+5933042,Kamloops,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,23.1,,2016,32.4,-9.299999999999997,24.7,Green,FALSE
+5933042,Kamloops,Municipality,1,COMPL,Supporting,2025,227,,2024,459,-232,,Not rated,FALSE
+5933042,Kamloops,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,8.2,,,,,19.2,Red,FALSE
+5933042,Kamloops,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,66.1,"Secondary source, not independently verified",,,,100,Red,FALSE
+5933042,Kamloops,Municipality,1,RENT_AVG,Supporting,2025,1513,Excellent,2024,1425,88,,Not rated,FALSE
+5933042,Kamloops,Municipality,1,RENT_CHG,Supporting,2025,4.1,Fair (Use with Caution),2024,6.7,-2.6000000000000005,,Not rated,FALSE
+5933042,Kamloops,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,36.9,,2016,46.7,-9.800000000000004,37.8,Green,FALSE
+5933042,Kamloops,Municipality,1,VAC,Headline KPI (RAG),2025,1.2,Excellent,2024,1.4,-0.19999999999999996,3,Red,FALSE
+5917030,Oak Bay,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,9.8,,2016,9.2,0.6000000000000014,13.4,Green,FALSE
+5917030,Oak Bay,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,25.1,,2016,27.3,-2.1999999999999993,24.7,Amber,FALSE
+5917030,Oak Bay,Municipality,1,COMPL,Supporting,2025,27,,2024,31,-4,,Not rated,FALSE
+5917030,Oak Bay,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,3.8,,,,,19.2,Red,FALSE
+5917030,Oak Bay,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,28.6,"Secondary source, not independently verified",,,,100,Red,FALSE
+5917030,Oak Bay,Municipality,1,RENT_AVG,Supporting,2025,1739,Very good,2024,1537,202,,Not rated,FALSE
+5917030,Oak Bay,Municipality,1,RENT_CHG,Supporting,2025,4.7,Very good,2024,4.3,0.40000000000000036,,Not rated,FALSE
+5917030,Oak Bay,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,45.3,,2016,49.6,-4.300000000000004,37.8,Red,FALSE
+5917030,Oak Bay,Municipality,1,VAC,Headline KPI (RAG),2025,2.3,Good,2024,1.5,0.7999999999999998,3,Amber,FALSE
+5915043,Port Moody,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,10.8,,2016,10.9,-0.09999999999999964,13.4,Green,FALSE
+5915043,Port Moody,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,19.4,,2016,22.3,-2.900000000000002,24.7,Green,FALSE
+5915043,Port Moody,Municipality,1,COMPL,Supporting,2025,706,,2024,21,685,,Not rated,FALSE
+5915043,Port Moody,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,28.2,,,,,19.2,Green,FALSE
+5915043,Port Moody,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,72.7,"Secondary source, not independently verified",,,,100,Red,FALSE
+5915043,Port Moody,Municipality,1,RENT_AVG,Supporting,2025,2284,Fair (Use with Caution),2024,1928,356,,Not rated,FALSE
+5915043,Port Moody,Municipality,1,RENT_CHG,Supporting,2025,0.9,Excellent,2023,10.6,-9.7,,Not rated,FALSE
+5915043,Port Moody,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,29.6,,2016,35.5,-5.899999999999999,37.8,Green,FALSE
+5915043,Port Moody,Municipality,1,VAC,Headline KPI (RAG),2025,2.4,Good,2023,1.3,1.0999999999999999,3,Amber,FALSE
+5917021,Saanich,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,10.3,,2016,11.8,-1.5,13.4,Green,FALSE
+5917021,Saanich,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,20.8,,2016,26.1,-5.300000000000001,24.7,Green,FALSE
+5917021,Saanich,Municipality,1,COMPL,Supporting,2025,413,,2024,380,33,,Not rated,FALSE
+5917021,Saanich,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,8.8,,,,,19.2,Red,FALSE
+5917021,Saanich,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,76.8,"Secondary source, not independently verified",,,,100,Amber,FALSE
+5917021,Saanich,Municipality,1,RENT_AVG,Supporting,2025,1885,Excellent,2024,1662,223,,Not rated,FALSE
+5917021,Saanich,Municipality,1,RENT_CHG,Supporting,2025,4,Fair (Use with Caution),2024,5.9,-1.9000000000000004,,Not rated,FALSE
+5917021,Saanich,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,39.1,,2016,44.9,-5.799999999999997,37.8,Amber,FALSE
+5917021,Saanich,Municipality,1,VAC,Headline KPI (RAG),2025,3.3,Very good,2024,1.4,1.9,3,Green,FALSE
+5915022,Vancouver,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,19,,2016,19.8,-0.8000000000000007,13.4,Red,FALSE
+5915022,Vancouver,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,25.7,,2016,28,-2.3000000000000007,24.7,Amber,FALSE
+5915022,Vancouver,Municipality,1,COMPL,Supporting,2025,6864,,2024,5501,1363,,Not rated,FALSE
+5915022,Vancouver,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,17.7,,,,,19.2,Amber,FALSE
+5915022,Vancouver,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,79.6,"Secondary source, not independently verified",,,,100,Amber,FALSE
+5915022,Vancouver,Municipality,1,RENT_AVG,Supporting,2025,1994,Excellent,2024,1966,28,,Not rated,FALSE
+5915022,Vancouver,Municipality,1,RENT_CHG,Supporting,2025,2.4,Very good,2024,3.5,-1.1,,Not rated,FALSE
+5915022,Vancouver,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,39.4,,2016,44.3,-4.899999999999999,37.8,Amber,FALSE
+5915022,Vancouver,Municipality,1,VAC,Headline KPI (RAG),2025,2.7,Excellent,2024,1.5,1.2000000000000002,3,Amber,FALSE
+5917034,Victoria,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,19.4,,2016,21.1,-1.7000000000000028,13.4,Red,FALSE
+5917034,Victoria,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,26.8,,2016,30.3,-3.5,24.7,Red,FALSE
+5917034,Victoria,Municipality,1,COMPL,Supporting,2025,569,,2024,1106,-537,,Not rated,FALSE
+5917034,Victoria,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,22,,,,,19.2,Green,FALSE
+5917034,Victoria,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,224.1,"Secondary source, not independently verified",,,,100,Green,FALSE
+5917034,Victoria,Municipality,1,RENT_AVG,Supporting,2025,1714,Excellent,2024,1622,92,,Not rated,FALSE
+5917034,Victoria,Municipality,1,RENT_CHG,Supporting,2025,5.6,Very good,2024,2.2,3.3999999999999995,,Not rated,FALSE
+5917034,Victoria,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,42.2,,2016,45.9,-3.6999999999999957,37.8,Red,FALSE
+5917034,Victoria,Municipality,1,VAC,Headline KPI (RAG),2025,3.2,Very good,2024,2.5,0.7000000000000002,3,Green,FALSE
+5915055,West Vancouver,Municipality,1,CHN_ALL,Headline KPI (RAG),2021,15.9,,2016,14.2,1.700000000000001,13.4,Red,FALSE
+5915055,West Vancouver,Municipality,1,CHN_RENT,Headline KPI (RAG),2021,31.3,,2016,30.5,0.8000000000000007,24.7,Red,FALSE
+5915055,West Vancouver,Municipality,1,COMPL,Supporting,2025,272,,2024,95,177,,Not rated,FALSE
+5915055,West Vancouver,Municipality,1,COMPL_RATE,Headline KPI (RAG),2025,12,,,,,19.2,Red,FALSE
+5915055,West Vancouver,Municipality,1,HTO_Y1,Headline KPI (RAG),2024,26.4,"Secondary source, not independently verified",,,,100,Red,FALSE
+5915055,West Vancouver,Municipality,1,RENT_AVG,Supporting,2025,2577,Very good,2024,2603,-26,,Not rated,FALSE
+5915055,West Vancouver,Municipality,1,RENT_CHG,Supporting,2023,6.6,Very good,2022,6,0.5999999999999996,,Not rated,TRUE
+5915055,West Vancouver,Municipality,1,UNAFF_RENT,Headline KPI (RAG),2021,56,,2016,57.8,-1.7999999999999972,37.8,Red,FALSE
+5915055,West Vancouver,Municipality,1,VAC,Headline KPI (RAG),2025,1.6,Good,2024,4.1,-2.4999999999999996,3,Red,FALSE
+5917015,Central Saanich,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,7.7,,2016,9.4,-1.7000000000000002,13.4,Green,FALSE
+5917015,Central Saanich,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,20.7,,2016,30.7,-10,24.7,Green,FALSE
+5917015,Central Saanich,Municipality,2,COMPL,Supporting,2025,259,,2024,64,195,,Not rated,FALSE
+5917015,Central Saanich,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,21.8,,,,,19.2,Green,FALSE
+5917015,Central Saanich,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,407.8,"Secondary source, not independently verified",,,,100,Green,FALSE
+5917015,Central Saanich,Municipality,2,RENT_AVG,Supporting,2025,1840,Good,2024,2035,-195,,Not rated,FALSE
+5917015,Central Saanich,Municipality,2,RENT_CHG,Supporting,2024,2.7,Good,2023,9,-6.3,,Not rated,TRUE
+5917015,Central Saanich,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,35,,2016,45.1,-10.100000000000001,37.8,Green,FALSE
+5917015,Central Saanich,Municipality,2,VAC,Headline KPI (RAG),2025,3.8,Fair (Use with Caution),2024,3.5,0.2999999999999998,3,Green,FALSE
+5909020,Chilliwack,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,10.1,,2016,11.7,-1.5999999999999996,13.4,Green,FALSE
+5909020,Chilliwack,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,25.1,,2016,30.6,-5.5,24.7,Amber,FALSE
+5909020,Chilliwack,Municipality,2,COMPL,Supporting,2025,714,,2024,711,3,,Not rated,FALSE
+5909020,Chilliwack,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,16.8,,,,,19.2,Amber,FALSE
+5909020,Chilliwack,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,162.2,Verified against primary source,,,,100,Green,FALSE
+5909020,Chilliwack,Municipality,2,RENT_AVG,Supporting,2025,1381,Excellent,2024,1281,100,,Not rated,FALSE
+5909020,Chilliwack,Municipality,2,RENT_CHG,Supporting,2025,7.9,Good,2023,9.3,-1.4000000000000004,,Not rated,FALSE
+5909020,Chilliwack,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,38.5,,2016,46.1,-7.600000000000001,37.8,Amber,FALSE
+5909020,Chilliwack,Municipality,2,VAC,Headline KPI (RAG),2025,3.1,Very good,2024,1.3,1.8,3,Green,FALSE
+5915051,City of North Vancouver,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,19,,2016,19.7,-0.6999999999999993,13.4,Red,FALSE
+5915051,City of North Vancouver,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,29.1,,2016,30.7,-1.5999999999999979,24.7,Red,FALSE
+5915051,City of North Vancouver,Municipality,2,COMPL,Supporting,2025,801,,2024,778,23,,Not rated,FALSE
+5915051,City of North Vancouver,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,24.9,,,,,19.2,Green,FALSE
+5915051,City of North Vancouver,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,94.1,"Secondary source, not independently verified",,,,100,Amber,FALSE
+5915051,City of North Vancouver,Municipality,2,RENT_AVG,Supporting,2025,2127,Excellent,2024,1976,151,,Not rated,FALSE
+5915051,City of North Vancouver,Municipality,2,RENT_CHG,Supporting,2023,5.1,Fair (Use with Caution),2022,7.1,-2,,Not rated,TRUE
+5915051,City of North Vancouver,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,43,,2016,45.9,-2.8999999999999986,37.8,Red,FALSE
+5915051,City of North Vancouver,Municipality,2,VAC,Headline KPI (RAG),2025,2.9,Very good,2024,1.5,1.4,3,Amber,FALSE
+5917040,Esquimalt,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,18.1,,2016,21,-2.8999999999999986,13.4,Red,FALSE
+5917040,Esquimalt,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,28.5,,2016,34.9,-6.399999999999999,24.7,Red,FALSE
+5917040,Esquimalt,Municipality,2,COMPL,Supporting,2025,406,,2024,371,35,,Not rated,FALSE
+5917040,Esquimalt,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,33.4,,,,,19.2,Green,FALSE
+5917040,Esquimalt,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,455.6,"Secondary source, not independently verified",,,,100,Green,FALSE
+5917040,Esquimalt,Municipality,2,RENT_AVG,Supporting,2025,1616,Very good,2024,1431,185,,Not rated,FALSE
+5917040,Esquimalt,Municipality,2,RENT_CHG,Supporting,2022,7.4,Good,2021,3.1,4.300000000000001,,Not rated,TRUE
+5917040,Esquimalt,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,36.3,,2016,44.1,-7.800000000000004,37.8,Green,FALSE
+5917040,Esquimalt,Municipality,2,VAC,Headline KPI (RAG),2025,2.9,Very good,2024,1.5,1.4,3,Amber,FALSE
+5935010,Kelowna,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,9.3,,2016,11.7,-2.3999999999999986,13.4,Green,FALSE
+5935010,Kelowna,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,17.8,,2016,25.5,-7.699999999999999,24.7,Green,FALSE
+5935010,Kelowna,Municipality,2,COMPL,Supporting,2025,3027,,2024,1570,1457,,Not rated,FALSE
+5935010,Kelowna,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,33.4,,,,,19.2,Green,FALSE
+5935010,Kelowna,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,254.4,"Secondary source, not independently verified",,,,100,Green,FALSE
+5935010,Kelowna,Municipality,2,RENT_AVG,Supporting,2025,1916,Excellent,2024,1715,201,,Not rated,FALSE
+5935010,Kelowna,Municipality,2,RENT_CHG,Supporting,2025,2.9,Good,2023,11.1,-8.2,,Not rated,FALSE
+5935010,Kelowna,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,44.2,,2016,46.8,-2.5999999999999943,37.8,Red,FALSE
+5935010,Kelowna,Municipality,2,VAC,Headline KPI (RAG),2025,6.9,Good,2024,3.7,3.2,3,Green,FALSE
+5915075,Maple Ridge,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,12.9,,2016,13.8,-0.9000000000000004,13.4,Green,FALSE
+5915075,Maple Ridge,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,30,,2016,37,-7,24.7,Red,FALSE
+5915075,Maple Ridge,Municipality,2,COMPL,Supporting,2025,681,,2024,650,31,,Not rated,FALSE
+5915075,Maple Ridge,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,18.4,,,,,19.2,Amber,FALSE
+5915075,Maple Ridge,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,122.7,"Secondary source, not independently verified",,,,100,Green,FALSE
+5915075,Maple Ridge,Municipality,2,RENT_AVG,Supporting,2025,1465,Excellent,2024,1428,37,,Not rated,FALSE
+5915075,Maple Ridge,Municipality,2,RENT_CHG,Supporting,2023,16,Fair (Use with Caution),2022,6.6,9.4,,Not rated,TRUE
+5915075,Maple Ridge,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,35.8,,2016,41.5,-5.700000000000003,37.8,Green,FALSE
+5915075,Maple Ridge,Municipality,2,VAC,Headline KPI (RAG),2025,2.3,Very good,2024,0.9,1.4,3,Amber,FALSE
+5921007,Nanaimo,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,11.9,,2016,13.9,-2,13.4,Green,FALSE
+5921007,Nanaimo,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,24.2,,2016,32.3,-8.099999999999998,24.7,Green,FALSE
+5921007,Nanaimo,Municipality,2,COMPL,Supporting,2025,593,,2024,1045,-452,,Not rated,FALSE
+5921007,Nanaimo,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,20.3,,,,,19.2,Green,FALSE
+5921007,Nanaimo,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,111.7,Verified against primary source,,,,100,Green,FALSE
+5921007,Nanaimo,Municipality,2,RENT_AVG,Supporting,2025,1688,Excellent,2024,1556,132,,Not rated,FALSE
+5921007,Nanaimo,Municipality,2,RENT_CHG,Supporting,2024,4.4,Good,2023,5.4,-1,,Not rated,TRUE
+5921007,Nanaimo,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,40.7,,2016,48.2,-7.5,37.8,Red,FALSE
+5921007,Nanaimo,Municipality,2,VAC,Headline KPI (RAG),2025,2.2,Excellent,2024,2.9,-0.6999999999999997,3,Amber,FALSE
+5917010,Sidney,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,12,,2016,12.4,-0.40000000000000036,13.4,Green,FALSE
+5917010,Sidney,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,27.7,,2016,31.6,-3.900000000000002,24.7,Red,FALSE
+5917010,Sidney,Municipality,2,COMPL,Supporting,2025,61,,2024,65,-4,,Not rated,FALSE
+5917010,Sidney,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,14.2,,,,,19.2,Red,FALSE
+5917010,Sidney,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,100,"Secondary source, not independently verified",,,,100,Green,FALSE
+5917010,Sidney,Municipality,2,RENT_AVG,Supporting,2025,2268,Very good,2024,2153,115,,Not rated,FALSE
+5917010,Sidney,Municipality,2,RENT_CHG,Supporting,2025,1.9,Excellent,2020,8.5,-6.6,,Not rated,FALSE
+5917010,Sidney,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,43.5,,2016,47.2,-3.700000000000003,37.8,Red,FALSE
+5917010,Sidney,Municipality,2,VAC,Headline KPI (RAG),2025,4.7,Very good,2024,2.4,2.3000000000000003,3,Green,FALSE
+5915004,Surrey,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,15.4,,2016,17.1,-1.700000000000001,13.4,Amber,FALSE
+5915004,Surrey,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,27.6,,2016,33.6,-6,24.7,Red,FALSE
+5915004,Surrey,Municipality,2,COMPL,Supporting,2025,6782,,2024,4539,2243,,Not rated,FALSE
+5915004,Surrey,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,27.1,,,,,19.2,Green,FALSE
+5915004,Surrey,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,153.3,"Secondary source, not independently verified",,,,100,Green,FALSE
+5915004,Surrey,Municipality,2,RENT_AVG,Supporting,2025,1728,Excellent,2024,1711,17,,Not rated,FALSE
+5915004,Surrey,Municipality,2,RENT_CHG,Supporting,2025,2.4,Good,2023,7.6,-5.199999999999999,,Not rated,FALSE
+5915004,Surrey,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,30.9,,2016,37.4,-6.5,37.8,Green,FALSE
+5915004,Surrey,Municipality,2,VAC,Headline KPI (RAG),2025,4.3,Very good,2024,1.7,2.5999999999999996,3,Green,FALSE
+5915007,White Rock,Municipality,2,CHN_ALL,Headline KPI (RAG),2021,21.1,,2016,18.7,2.400000000000002,13.4,Red,FALSE
+5915007,White Rock,Municipality,2,CHN_RENT,Headline KPI (RAG),2021,37,,2016,38.2,-1.2000000000000028,24.7,Red,FALSE
+5915007,White Rock,Municipality,2,COMPL,Supporting,2025,161,,2024,247,-86,,Not rated,FALSE
+5915007,White Rock,Municipality,2,COMPL_RATE,Headline KPI (RAG),2025,14.4,,,,,19.2,Amber,FALSE
+5915007,White Rock,Municipality,2,HTO_Y1,Headline KPI (RAG),2025,70.4,Verified against primary source,,,,100,Red,FALSE
+5915007,White Rock,Municipality,2,RENT_AVG,Supporting,2025,1547,Very good,2024,1559,-12,,Not rated,FALSE
+5915007,White Rock,Municipality,2,RENT_CHG,Supporting,2022,5.9,Fair (Use with Caution),2021,2.9,3.0000000000000004,,Not rated,TRUE
+5915007,White Rock,Municipality,2,UNAFF_RENT,Headline KPI (RAG),2021,47.3,,2016,49.4,-2.1000000000000014,37.8,Red,FALSE
+5915007,White Rock,Municipality,2,VAC,Headline KPI (RAG),2025,5.1,Good,2024,1.8,3.3,3,Green,FALSE
+5915002,City of Langley,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,21.3,,2016,23.6,-2.3000000000000007,13.4,Red,FALSE
+5915002,City of Langley,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,35.8,,2016,44.1,-8.300000000000004,24.7,Red,FALSE
+5915002,City of Langley,Municipality,3,COMPL,Supporting,2025,497,,2024,416,81,,Not rated,FALSE
+5915002,City of Langley,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,30.9,,,,,19.2,Green,FALSE
+5915002,City of Langley,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,212.4,Verified against primary source,,,,100,Green,FALSE
+5915002,City of Langley,Municipality,3,RENT_AVG,Supporting,2025,1909,Very good,2024,1768,141,,Not rated,FALSE
+5915002,City of Langley,Municipality,3,RENT_CHG,Supporting,2023,9.3,Good,2019,3.8,5.500000000000001,,Not rated,TRUE
+5915002,City of Langley,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,37,,2016,46.7,-9.700000000000003,37.8,Green,FALSE
+5915002,City of Langley,Municipality,3,VAC,Headline KPI (RAG),2025,2.4,Very good,2024,1.8,0.5999999999999999,3,Amber,FALSE
+5917041,Colwood,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,7.6,,2016,8.3,-0.7000000000000011,13.4,Green,FALSE
+5917041,Colwood,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,17.2,,2016,19.5,-2.3000000000000007,24.7,Green,FALSE
+5917041,Colwood,Municipality,3,COMPL,Supporting,2025,606,,2024,225,381,,Not rated,FALSE
+5917041,Colwood,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,55.3,,,,,19.2,Green,FALSE
+5917041,Colwood,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,223,Verified against primary source,,,,100,Green,FALSE
+5917041,Colwood,Municipality,3,RENT_AVG,Supporting,2023,1523,Good,2022,1365,158,,Not rated,TRUE
+5917041,Colwood,Municipality,3,RENT_CHG,Supporting,2020,2.7,Good,2019,7.5,-4.8,,Not rated,TRUE
+5917041,Colwood,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,29.1,,2016,28.9,0.20000000000000284,37.8,Green,FALSE
+5917041,Colwood,Municipality,3,VAC,Headline KPI (RAG),2023,0,Fair (Use with Caution),2022,0.8,-0.8,3,Red,TRUE
+5909056,Mission,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,9,,2016,12.7,-3.6999999999999993,13.4,Green,FALSE
+5909056,Mission,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,21.5,,2016,33.5,-12,24.7,Green,FALSE
+5909056,Mission,Municipality,3,COMPL,Supporting,2025,395,,2024,546,-151,,Not rated,FALSE
+5909056,Mission,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,30.4,,,,,19.2,Green,FALSE
+5909056,Mission,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,148.8,Verified against primary source,,,,100,Green,FALSE
+5909056,Mission,Municipality,3,RENT_AVG,Supporting,2025,1277,Excellent,2024,1406,-129,,Not rated,FALSE
+5909056,Mission,Municipality,3,RENT_CHG,Supporting,2022,14.9,Good,2021,7.7,7.2,,Not rated,TRUE
+5909056,Mission,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,32.5,,2016,42.2,-9.700000000000003,37.8,Green,FALSE
+5909056,Mission,Municipality,3,VAC,Headline KPI (RAG),2025,5.3,Fair (Use with Caution),2024,1.5,3.8,3,Green,FALSE
+5915029,New Westminster,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,20,,2016,20.7,-0.6999999999999993,13.4,Red,FALSE
+5915029,New Westminster,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,30.3,,2016,33.5,-3.1999999999999993,24.7,Red,FALSE
+5915029,New Westminster,Municipality,3,COMPL,Supporting,2025,837,,2024,1258,-421,,Not rated,FALSE
+5915029,New Westminster,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,22.8,,,,,19.2,Green,FALSE
+5915029,New Westminster,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,179.1,Verified against primary source,,,,100,Green,FALSE
+5915029,New Westminster,Municipality,3,RENT_AVG,Supporting,2025,1794,Excellent,2024,1729,65,,Not rated,FALSE
+5915029,New Westminster,Municipality,3,RENT_CHG,Supporting,2023,11.9,Good,2022,5.8,6.1000000000000005,,Not rated,TRUE
+5915029,New Westminster,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,36.2,,2016,40.3,-4.099999999999994,37.8,Green,FALSE
+5915029,New Westminster,Municipality,3,VAC,Headline KPI (RAG),2025,5.8,Fair (Use with Caution),2024,1.4,4.4,3,Green,FALSE
+5919008,North Cowichan,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,8,,2016,9.7,-1.6999999999999993,13.4,Green,FALSE
+5919008,North Cowichan,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,21.4,,2016,26.9,-5.5,24.7,Green,FALSE
+5919008,North Cowichan,Municipality,3,COMPL,Supporting,2025,684,,2024,0,684,,Not rated,FALSE
+5919008,North Cowichan,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,16.6,,,,,19.2,Amber,FALSE
+5919008,North Cowichan,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,73.8,Verified against primary source,,,,100,Red,FALSE
+5919008,North Cowichan,Municipality,3,RENT_AVG,Supporting,2025,1350,Very good,2024,1165,185,,Not rated,FALSE
+5919008,North Cowichan,Municipality,3,RENT_CHG,Supporting,2021,5.3,Fair (Use with Caution),2020,4.2,1.0999999999999996,,Not rated,TRUE
+5919008,North Cowichan,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,33.5,,2016,44.6,-11.100000000000001,37.8,Green,FALSE
+5919008,North Cowichan,Municipality,3,VAC,Headline KPI (RAG),2025,3.9,Fair (Use with Caution),2024,2.2,1.6999999999999997,3,Green,FALSE
+5917005,North Saanich,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,5.8,,2016,5.5,0.2999999999999998,13.4,Green,FALSE
+5917005,North Saanich,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,22.6,,2016,18.5,4.100000000000001,24.7,Green,FALSE
+5917005,North Saanich,Municipality,3,COMPL,Supporting,2025,17,,2024,22,-5,,Not rated,FALSE
+5917005,North Saanich,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,4.7,,,,,19.2,Red,FALSE
+5917005,North Saanich,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,20,Verified against primary source,,,,100,Red,FALSE
+5917005,North Saanich,Municipality,3,RENT_AVG,Supporting,,,,,,,,Not rated,FALSE
+5917005,North Saanich,Municipality,3,RENT_CHG,Supporting,,,,,,,,Not rated,FALSE
+5917005,North Saanich,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,32.8,,2016,36,-3.200000000000003,37.8,Green,FALSE
+5917005,North Saanich,Municipality,3,VAC,Headline KPI (RAG),,,,,,,3,No data,FALSE
+5915039,Port Coquitlam,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,13.1,,2016,14.8,-1.700000000000001,13.4,Green,FALSE
+5915039,Port Coquitlam,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,28.7,,2016,34,-5.300000000000001,24.7,Red,FALSE
+5915039,Port Coquitlam,Municipality,3,COMPL,Supporting,2025,395,,2024,68,327,,Not rated,FALSE
+5915039,Port Coquitlam,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,9.6,,,,,19.2,Red,FALSE
+5915039,Port Coquitlam,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,55.7,Verified against primary source,,,,100,Red,FALSE
+5915039,Port Coquitlam,Municipality,3,RENT_AVG,Supporting,2025,1918,Very good,2024,2385,-467,,Not rated,FALSE
+5915039,Port Coquitlam,Municipality,3,RENT_CHG,Supporting,2018,6.1,Good,2017,10,-3.9000000000000004,,Not rated,TRUE
+5915039,Port Coquitlam,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,35.1,,2016,40.3,-5.199999999999996,37.8,Green,FALSE
+5915039,Port Coquitlam,Municipality,3,VAC,Headline KPI (RAG),2024,3.8,Fair (Use with Caution),2023,0.2,3.5999999999999996,3,Green,TRUE
+5953023,Prince George,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,7.1,,2016,10.2,-3.0999999999999996,13.4,Green,FALSE
+5953023,Prince George,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,17,,2016,26,-9,24.7,Green,FALSE
+5953023,Prince George,Municipality,3,COMPL,Supporting,2025,1092,,2024,0,1092,,Not rated,FALSE
+5953023,Prince George,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,11.4,,,,,19.2,Red,FALSE
+5953023,Prince George,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,104,Verified against primary source,,,,100,Green,FALSE
+5953023,Prince George,Municipality,3,RENT_AVG,Supporting,2025,1354,Excellent,2024,1186,168,,Not rated,FALSE
+5953023,Prince George,Municipality,3,RENT_CHG,Supporting,2025,11,Good,2024,3.2,7.8,,Not rated,FALSE
+5953023,Prince George,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,29.1,,2016,39.5,-10.399999999999999,37.8,Green,FALSE
+5953023,Prince George,Municipality,3,VAC,Headline KPI (RAG),2025,4.3,Very good,2024,2.6,1.6999999999999997,3,Green,FALSE
+5917047,View Royal,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,8.2,,2016,8.8,-0.6000000000000014,13.4,Green,FALSE
+5917047,View Royal,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,17.4,,2016,20.1,-2.700000000000003,24.7,Green,FALSE
+5917047,View Royal,Municipality,3,COMPL,Supporting,2025,247,,2024,340,-93,,Not rated,FALSE
+5917047,View Royal,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,41.9,,,,,19.2,Green,FALSE
+5917047,View Royal,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,262.6,Verified against primary source,,,,100,Green,FALSE
+5917047,View Royal,Municipality,3,RENT_AVG,Supporting,2025,2466,Excellent,2024,2203,263,,Not rated,FALSE
+5917047,View Royal,Municipality,3,RENT_CHG,Supporting,2023,3.9,Fair (Use with Caution),2022,2.6,1.2999999999999998,,Not rated,TRUE
+5917047,View Royal,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,34.4,,2016,34.8,-0.3999999999999986,37.8,Green,FALSE
+5917047,View Royal,Municipality,3,VAC,Headline KPI (RAG),2025,2.1,Very good,2024,3.9,-1.7999999999999998,3,Amber,FALSE
+5935029,West Kelowna,Municipality,3,CHN_ALL,Headline KPI (RAG),2021,5.8,,2016,5.8,0,13.4,Green,FALSE
+5935029,West Kelowna,Municipality,3,CHN_RENT,Headline KPI (RAG),2021,15.5,,2016,18.1,-2.6000000000000014,24.7,Green,FALSE
+5935029,West Kelowna,Municipality,3,COMPL,Supporting,2025,243,,2024,206,37,,Not rated,FALSE
+5935029,West Kelowna,Municipality,3,COMPL_RATE,Headline KPI (RAG),2025,15.2,,,,,19.2,Amber,FALSE
+5935029,West Kelowna,Municipality,3,HTO_Y1,Headline KPI (RAG),2025,114.5,Verified against primary source,,,,100,Green,FALSE
+5935029,West Kelowna,Municipality,3,RENT_AVG,Supporting,2025,1868,Excellent,2024,1872,-4,,Not rated,FALSE
+5935029,West Kelowna,Municipality,3,RENT_CHG,Supporting,2024,2.6,Very good,2023,5.4,-2.8000000000000003,,Not rated,TRUE
+5935029,West Kelowna,Municipality,3,UNAFF_RENT,Headline KPI (RAG),2021,43.5,,2016,42,1.5,37.8,Red,FALSE
+5935029,West Kelowna,Municipality,3,VAC,Headline KPI (RAG),2025,5.3,Excellent,2024,3.7,1.5999999999999996,3,Green,FALSE
+5915025,Burnaby,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,18.8,,2016,19.9,-1.0999999999999979,13.4,Red,FALSE
+5915025,Burnaby,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,27.9,,2016,32.1,-4.200000000000003,24.7,Red,FALSE
+5915025,Burnaby,Municipality,4,COMPL,Supporting,2025,3797,,2024,4437,-640,,Not rated,FALSE
+5915025,Burnaby,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,41.1,,,,,19.2,Green,FALSE
+5915025,Burnaby,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5915025,Burnaby,Municipality,4,RENT_AVG,Supporting,2025,1856,Excellent,2024,1768,88,,Not rated,FALSE
+5915025,Burnaby,Municipality,4,RENT_CHG,Supporting,2024,3.8,Fair (Use with Caution),2023,10.4,-6.6000000000000005,,Not rated,TRUE
+5915025,Burnaby,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,38.7,,2016,45,-6.299999999999997,37.8,Amber,FALSE
+5915025,Burnaby,Municipality,4,VAC,Headline KPI (RAG),2025,5.9,Good,2024,1.5,4.4,3,Green,FALSE
+5915034,Coquitlam,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,16.7,,2016,17.8,-1.1000000000000014,13.4,Red,FALSE
+5915034,Coquitlam,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,30.4,,2016,35.4,-5,24.7,Red,FALSE
+5915034,Coquitlam,Municipality,4,COMPL,Supporting,2025,3516,,2024,2242,1274,,Not rated,FALSE
+5915034,Coquitlam,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,46,,,,,19.2,Green,FALSE
+5915034,Coquitlam,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5915034,Coquitlam,Municipality,4,RENT_AVG,Supporting,2025,1909,Very good,2024,1916,-7,,Not rated,FALSE
+5915034,Coquitlam,Municipality,4,RENT_CHG,Supporting,2023,12.6,Fair (Use with Caution),2022,7.9,4.699999999999999,,Not rated,TRUE
+5915034,Coquitlam,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,40.1,,2016,46.6,-6.5,37.8,Red,FALSE
+5915034,Coquitlam,Municipality,4,VAC,Headline KPI (RAG),2024,1.5,Excellent,2023,0.3,1.2,3,Red,TRUE
+5926010,Courtenay,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,10.8,,2016,13.8,-3,13.4,Green,FALSE
+5926010,Courtenay,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,25.6,,2016,35.1,-9.5,24.7,Amber,FALSE
+5926010,Courtenay,Municipality,4,COMPL,Supporting,2025,947,,2024,0,947,,Not rated,FALSE
+5926010,Courtenay,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,24.3,,,,,19.2,Green,FALSE
+5926010,Courtenay,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5926010,Courtenay,Municipality,4,RENT_AVG,Supporting,2025,1615,Excellent,2024,1600,15,,Not rated,FALSE
+5926010,Courtenay,Municipality,4,RENT_CHG,Supporting,2024,11.9,Fair (Use with Caution),2023,5,6.9,,Not rated,TRUE
+5926010,Courtenay,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,42.7,,2016,51,-8.299999999999997,37.8,Red,FALSE
+5926010,Courtenay,Municipality,4,VAC,Headline KPI (RAG),2025,3.5,Very good,2024,5.1,-1.5999999999999996,3,Green,FALSE
+5917044,Langford,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,10.7,,2016,11.5,-0.8000000000000007,13.4,Green,FALSE
+5917044,Langford,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,20.6,,2016,26.6,-6,24.7,Green,FALSE
+5917044,Langford,Municipality,4,COMPL,Supporting,2025,1244,,2024,1384,-140,,Not rated,FALSE
+5917044,Langford,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,64.5,,,,,19.2,Green,FALSE
+5917044,Langford,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5917044,Langford,Municipality,4,RENT_AVG,Supporting,2025,2066,Excellent,2024,2054,12,,Not rated,FALSE
+5917044,Langford,Municipality,4,RENT_CHG,Supporting,2025,2.4,Excellent,2024,3.6,-1.2000000000000002,,Not rated,FALSE
+5917044,Langford,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,38.6,,2016,39.7,-1.1000000000000014,37.8,Amber,FALSE
+5917044,Langford,Municipality,4,VAC,Headline KPI (RAG),2025,4.6,Very good,2024,4.3,0.2999999999999998,3,Green,FALSE
+5907041,Penticton,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,12.6,,2016,16.3,-3.700000000000001,13.4,Green,FALSE
+5907041,Penticton,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,24.3,,2016,33.2,-8.900000000000002,24.7,Green,FALSE
+5907041,Penticton,Municipality,4,COMPL,Supporting,2025,576,,2024,0,576,,Not rated,FALSE
+5907041,Penticton,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,11.1,,,,,19.2,Red,FALSE
+5907041,Penticton,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5907041,Penticton,Municipality,4,RENT_AVG,Supporting,2025,1387,Excellent,2024,1325,62,,Not rated,FALSE
+5907041,Penticton,Municipality,4,RENT_CHG,Supporting,2025,4.6,Fair (Use with Caution),2022,5.9,-1.3000000000000007,,Not rated,FALSE
+5907041,Penticton,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,44.2,,2016,49.4,-5.199999999999996,37.8,Red,FALSE
+5907041,Penticton,Municipality,4,VAC,Headline KPI (RAG),2025,2.6,Excellent,2024,1.2,1.4000000000000001,3,Amber,FALSE
+5915070,Pitt Meadows,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,11.6,,2016,11.8,-0.20000000000000107,13.4,Green,FALSE
+5915070,Pitt Meadows,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,28.1,,2016,31.5,-3.3999999999999986,24.7,Red,FALSE
+5915070,Pitt Meadows,Municipality,4,COMPL,Supporting,2025,40,,2024,13,27,,Not rated,FALSE
+5915070,Pitt Meadows,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,4.6,,,,,19.2,Red,FALSE
+5915070,Pitt Meadows,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5915070,Pitt Meadows,Municipality,4,RENT_AVG,Supporting,2025,1721,Excellent,2023,1721,0,,Not rated,FALSE
+5915070,Pitt Meadows,Municipality,4,RENT_CHG,Supporting,2023,6.4,Good,2022,20,-13.6,,Not rated,TRUE
+5915070,Pitt Meadows,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,33.9,,2016,35,-1.1000000000000014,37.8,Green,FALSE
+5915070,Pitt Meadows,Municipality,4,VAC,Headline KPI (RAG),2021,0,Excellent,2020,1.1,-1.1,3,Red,TRUE
+5915015,Richmond,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,20.3,,2016,20.2,0.10000000000000142,13.4,Red,FALSE
+5915015,Richmond,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,30.4,,2016,33.6,-3.200000000000003,24.7,Red,FALSE
+5915015,Richmond,Municipality,4,COMPL,Supporting,2025,1845,,2024,1551,294,,Not rated,FALSE
+5915015,Richmond,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,19.6,,,,,19.2,Green,FALSE
+5915015,Richmond,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5915015,Richmond,Municipality,4,RENT_AVG,Supporting,2025,1887,Excellent,2024,1901,-14,,Not rated,FALSE
+5915015,Richmond,Municipality,4,RENT_CHG,Supporting,2022,10.5,Fair (Use with Caution),2021,3.3,7.2,,Not rated,TRUE
+5915015,Richmond,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,44.5,,2016,47.1,-2.6000000000000014,37.8,Red,FALSE
+5915015,Richmond,Municipality,4,VAC,Headline KPI (RAG),2025,3.1,Very good,2024,0.9,2.2,3,Green,FALSE
+5931006,Squamish,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,6.4,,2016,7.2,-0.7999999999999998,13.4,Green,FALSE
+5931006,Squamish,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,14.3,,2016,16.9,-2.599999999999998,24.7,Green,FALSE
+5931006,Squamish,Municipality,4,COMPL,Supporting,2025,757,,2024,0,757,,Not rated,FALSE
+5931006,Squamish,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,27.5,,,,,19.2,Green,FALSE
+5931006,Squamish,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5931006,Squamish,Municipality,4,RENT_AVG,Supporting,2025,2001,Very good,2024,1980,21,,Not rated,FALSE
+5931006,Squamish,Municipality,4,RENT_CHG,Supporting,2025,4.2,Good,2023,11.8,-7.6000000000000005,,Not rated,FALSE
+5931006,Squamish,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,37.8,,2016,36.5,1.2999999999999972,37.8,Green,FALSE
+5931006,Squamish,Municipality,4,VAC,Headline KPI (RAG),2025,0.1,Very good,2024,0.7,-0.6,3,Red,FALSE
+5915001,Township of Langley,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,11.2,,2016,10.6,0.5999999999999996,13.4,Green,FALSE
+5915001,Township of Langley,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,24.2,,2016,25.5,-1.3000000000000007,24.7,Green,FALSE
+5915001,Township of Langley,Municipality,4,COMPL,Supporting,2025,2041,,2024,2080,-39,,Not rated,FALSE
+5915001,Township of Langley,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,44.2,,,,,19.2,Green,FALSE
+5915001,Township of Langley,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5915001,Township of Langley,Municipality,4,RENT_AVG,Supporting,2025,2185,Excellent,2024,2160,25,,Not rated,FALSE
+5915001,Township of Langley,Municipality,4,RENT_CHG,Supporting,2022,4.6,Good,2021,2.4,2.1999999999999997,,Not rated,TRUE
+5915001,Township of Langley,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,35.3,,2016,39.1,-3.8000000000000043,37.8,Green,FALSE
+5915001,Township of Langley,Municipality,4,VAC,Headline KPI (RAG),2025,3.9,Good,2024,3.4,0.5,3,Green,FALSE
+5937014,Vernon,Municipality,4,CHN_ALL,Headline KPI (RAG),2021,6.9,,2016,13.5,-6.6,13.4,Green,FALSE
+5937014,Vernon,Municipality,4,CHN_RENT,Headline KPI (RAG),2021,14.8,,2016,33.1,-18.3,24.7,Green,FALSE
+5937014,Vernon,Municipality,4,COMPL,Supporting,2025,774,,2024,0,774,,Not rated,FALSE
+5937014,Vernon,Municipality,4,COMPL_RATE,Headline KPI (RAG),2025,13,,,,,19.2,Red,FALSE
+5937014,Vernon,Municipality,4,HTO_Y1,Headline KPI (RAG),,,,,,,100,Not yet assessed,FALSE
+5937014,Vernon,Municipality,4,RENT_AVG,Supporting,2025,1406,Excellent,2024,1313,93,,Not rated,FALSE
+5937014,Vernon,Municipality,4,RENT_CHG,Supporting,2023,9.6,Good,2022,3.5,6.1,,Not rated,TRUE
+5937014,Vernon,Municipality,4,UNAFF_RENT,Headline KPI (RAG),2021,42.1,,2016,50,-7.899999999999999,37.8,Red,FALSE
+5937014,Vernon,Municipality,4,VAC,Headline KPI (RAG),2025,3.4,Good,2024,1.1,2.3,3,Green,FALSE

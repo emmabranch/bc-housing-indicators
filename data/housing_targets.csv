@@ -1,0 +1,41 @@
+geo_uid,municipality,hto_group,target_5yr,target_y1,y1_net_new,target_src,y1_src,y1_verified_primary,y1_period_start,y1_period_end,y1_pct_of_target,target_src_url,y1_src_url,y1_src_type
+5909052,Abbotsford,1,7240,1022,602,G1T,STY,TRUE,2023-10-01,2024-09-30,58.9,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915011,Delta,1,3607,514,561,G1T,STY,FALSE,2023-10-01,2024-09-30,109.1,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915046,District of North Vancouver,1,2838,499,500,G1T,STY,FALSE,2023-10-01,2024-09-30,100.2,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5933042,Kamloops,1,4236,679,449,G1T,STY,FALSE,2023-10-01,2024-09-30,66.1,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917030,Oak Bay,1,664,56,16,G1T,STY,FALSE,2023-10-01,2024-09-30,28.6,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915043,Port Moody,1,1694,231,168,G1T,STY,FALSE,2023-10-01,2024-09-30,72.7,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917021,Saanich,1,4610,440,338,G1T,STY,FALSE,2023-10-01,2024-09-30,76.8,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915022,Vancouver,1,28900,5202,4143,G1T,STY,FALSE,2023-10-01,2024-09-30,79.6,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917034,Victoria,1,4902,659,1477,G1T,STY,FALSE,2023-10-01,2024-09-30,224.1,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915055,West Vancouver,1,1432,220,58,G1T,STY,FALSE,2023-10-01,2024-09-30,26.4,https://news.gov.bc.ca/29574,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5909020,Chilliwack,2,4594,659,1069,G2T,STY,TRUE,2024-07-01,2025-06-30,162.2,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5935010,Kelowna,2,8774,1363,3467,G2T,STY,FALSE,2024-07-01,2025-06-30,254.4,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915075,Maple Ridge,2,3954,612,751,G2T,STY,FALSE,2024-07-01,2025-06-30,122.7,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5921007,Nanaimo,2,4703,783,875,G2T,STY,TRUE,2024-07-01,2025-06-30,111.7,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915051,City of North Vancouver,2,3320,581,547,G2T,STY,FALSE,2024-07-01,2025-06-30,94.1,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915004,Surrey,2,27256,4233,6488,G2T,STY,FALSE,2024-07-01,2025-06-30,153.3,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5915007,White Rock,2,1067,189,133,G2T,STY,TRUE,2024-07-01,2025-06-30,70.4,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917015,Central Saanich,2,588,77,314,G2T,STY,FALSE,2024-07-01,2025-06-30,407.8,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917010,Sidney,2,468,90,90,G2T,STY,FALSE,2024-07-01,2025-06-30,100,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917040,Esquimalt,2,754,81,369,G2T,STY,FALSE,2024-07-01,2025-06-30,455.6,https://news.gov.bc.ca/releases/2024HOUS0113-001012,https://storeys.com/bc-housing-supply-targets-progress-tracker/,Secondary (news tracker)
+5917041,Colwood,3,940,178,397,STY,G3R,TRUE,2024-08-01,2025-07-31,223,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5915002,City of Langley,3,1844,251,533,STY,G3R,TRUE,2024-08-01,2025-07-31,212.4,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5909056,Mission,3,1798,211,314,STY,G3R,TRUE,2024-08-01,2025-07-31,148.8,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5915029,New Westminster,3,4432,656,1175,STY,G3R,TRUE,2024-08-01,2025-07-31,179.1,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5915039,Port Coquitlam,3,2279,343,191,STY,G3R,TRUE,2024-08-01,2025-07-31,55.7,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5953023,Prince George,3,1803,273,284,STY,G3R,TRUE,2024-08-01,2025-07-31,104,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5935029,West Kelowna,3,2266,289,331,STY,G3R,TRUE,2024-08-01,2025-07-31,114.5,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5919008,North Cowichan,3,1233,191,141,STY,G3R,TRUE,2024-08-01,2025-07-31,73.8,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5917005,North Saanich,3,419,60,12,STY,G3R,TRUE,2024-08-01,2025-07-31,20,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5917047,View Royal,3,585,99,260,STY,G3R,TRUE,2024-08-01,2025-07-31,262.6,https://storeys.com/bc-housing-supply-targets-progress-tracker/,https://news.gov.bc.ca/releases/2025HMA0116-001177,Primary (BC Government)
+5915025,Burnaby,4,10240,1536,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5915034,Coquitlam,4,6481,972,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5926010,Courtenay,4,1334,200,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5917044,Langford,4,2993,449,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5907041,Penticton,4,908,136,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5915070,Pitt Meadows,4,727,109,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5915015,Richmond,4,6753,1013,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5931006,Squamish,4,1069,160,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5915001,Township of Langley,4,6596,989,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA
+5937014,Vernon,4,1849,277,NA,STY,NA,FALSE,2025-09-01,2026-08-31,NA,https://storeys.com/bc-housing-supply-targets-progress-tracker/,NA,NA

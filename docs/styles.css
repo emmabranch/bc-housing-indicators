@@ -1,0 +1,59 @@
+/* styles.css: corporate report styling for the dashboard */
+:root {
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --hair: #e1e0d9;
+  --accent: #2a5d8f;
+}
+body { color: var(--ink); }
+.navbar { background-color: #1f3b57 !important; }
+.muted { color: var(--ink-2); }
+.small { font-size: 0.8rem; }
+
+/* Disclaimer banner */
+.disclaimer { background: #f7f6f2; border-left: 4px solid var(--accent); font-size: 0.85rem; }
+
+/* KPI tiles */
+.kpi-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 900px) { .kpi-grid { grid-template-columns: 1fr; } }
+.kpi-tile { border: 1px solid var(--hair); border-radius: 8px; padding: 12px 14px; background: #fcfcfb; }
+.kpi-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+.kpi-big { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+.kpi-of { font-size: 0.8rem; color: var(--ink-2); }
+.kpi-meta { font-size: 0.75rem; color: var(--ink-2); margin-top: 2px; }
+.status-bar { display: flex; gap: 2px; height: 10px; margin: 8px 0 6px; border-radius: 4px; overflow: hidden; }
+.bar-seg { height: 100%; }
+.status-counts { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 0.72rem; color: var(--ink-2); }
+.count-item { display: inline-flex; align-items: center; gap: 4px; }
+.dot { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px;
+       border-radius: 50%; font-size: 0.6rem; font-weight: 700; }
+
+/* Status chips */
+.chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 10px;
+        font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.chip-icon { font-size: 0.75rem; }
+.chip-flag { font-weight: 700; margin-left: 1px; }
+
+/* Horizontal bar list */
+.hbar-note { font-size: 0.78rem; color: var(--ink-2); margin-bottom: 6px; }
+.hbar-row { display: grid; grid-template-columns: 190px 1fr 90px; align-items: center; gap: 8px; padding: 2px 0; }
+.hbar-row:hover { background: #f4f3ef; }
+.hbar-label { font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hbar-track { position: relative; height: 12px; background: #f0efec; border-radius: 4px; }
+.hbar-fill { height: 100%; border-radius: 0 4px 4px 0; }
+.hbar-target { position: absolute; top: -3px; bottom: -3px; border-left: 2px dashed var(--ink-2); }
+.hbar-value { text-align: right; }
+
+/* Map popups */
+.popup-table { font-size: 0.78rem; margin-top: 4px; border-collapse: collapse; }
+.popup-table td { padding: 1px 6px 1px 0; border-bottom: 1px solid var(--hair); }
+
+/* Data quality log table */
+.cell-output-display table, .card table { font-size: 0.8rem; }
+
+/* Quarto dashboards add flex 'fill' classes to divs; restore normal layout */
+.kpi-tile, .kpi-name, .kpi-meta, .kpi-headline, .hbar-label, .hbar-value,
+.hbar-note, .hbar-track, .hbar-chart { display: block !important; flex: none !important; }
+.status-bar, .status-counts { display: flex !important; flex-direction: row !important; flex: none !important; }
+.hbar-row { display: grid !important; flex: none !important; }
+.kpi-grid { align-content: start; grid-auto-rows: max-content; height: auto !important; }
