@@ -1,6 +1,7 @@
 # BC Municipal Housing Indicators
 
 **Live dashboard:** https://emmabranch.github.io/bc-housing-indicators/
+**Example report card:** https://emmabranch.github.io/bc-housing-indicators/reports/vancouver.html
 
 A documented housing indicator framework and corporate-style performance scorecard for the 40 British Columbia municipalities with Housing Target Orders under the *Housing Supply Act*, with British Columbia as a benchmark. Built in R and Quarto from public data.
 
@@ -17,6 +18,7 @@ A documented housing indicator framework and corporate-style performance scoreca
 | Housing Supply Act targets and Year 1 results, with per-row source and verification status | `data/housing_targets.csv` |
 | Data quality log | `qa/data_quality_log.md` |
 | Quarto dashboard (overview, scorecard, map, framework, about) | `index.qmd`, rendered to `docs/` |
+| Parameterised municipality report card (1 to 2 printable pages), rendered for all 40 municipalities | `reports/report_card.qmd`, rendered to `docs/reports/` |
 
 ## Indicators
 
@@ -76,7 +78,10 @@ Or run the scripts in order:
 4. `R/04_housing_targets.R`: hand-compiled Housing Supply Act targets and results
 5. `R/05_build_indicators.R`: indicator database, scorecard, framework, data dictionary
 6. `R/06_boundaries.R`: municipal boundaries
-7. `quarto render`: builds the dashboard into `docs/`
+7. `R/07_render_report_cards.R`: renders the report card for each municipality into `docs/reports/`
+8. `quarto render`: builds the dashboard into `docs/`
+
+To render a single report card, run in a terminal from the project root: `quarto render reports/report_card.qmd -P geo_uid:5915022` (any census subdivision code from `data/municipalities.csv`).
 
 Raw downloads are cached in `data-raw/`, which is not committed.
 

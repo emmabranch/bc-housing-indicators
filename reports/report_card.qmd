@@ -1,0 +1,199 @@
+---
+title: "Housing report card"
+params:
+  geo_uid: "5915022"
+format:
+  html:
+    embed-resources: true
+    css: report_card.css
+    toc: false
+    page-layout: article
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(htmltools)
+# Project root: this file lives in reports/, one level below the project root
+root <- if (file.exists("../_quarto.yml")) normalizePath("..") else here::here()
+proj <- function(...) file.path(root, ...)
+source(proj("R", "dashboard_helpers.R"))
+
+gid <- as.character(params$geo_uid)
+
+framework <- read_csv(proj("data", "indicator_framework.csv"), show_col_types = FALSE)
+scorecard <- read_csv(proj("data", "scorecard_latest.csv"),
+                      col_types = cols(geo_uid = "c", .default = col_guess()))
+long      <- read_csv(proj("data", "indicators_long.csv"),
+                      col_types = cols(geo_uid = "c", .default = col_guess()))
+targets   <- read_csv(proj("data", "housing_targets.csv"),
+                      col_types = cols(geo_uid = "c", .default = col_guess()))
+
+sc   <- scorecard |> filter(geo_uid == gid)
+bc   <- scorecard |> filter(geo_uid == "59")
+tg   <- targets   |> filter(geo_uid == gid)
+name <- sc$geo_name[1]
+grp  <- sc$hto_group[1]
+stopifnot(nrow(sc) > 0, nrow(tg) == 1)
+
+headline_ids <- c("HTO_Y1", "COMPL_RATE", "CHN_ALL", "CHN_RENT", "UNAFF_RENT", "VAC")
+```
+
+```{r}
+#| label: header
+div(class = "rc-header",
+  div(class = "rc-kicker", sprintf("Housing Target Order Group %s  ·  Census subdivision %s", grp, gid)),
+  h1(class = "rc-title", name),
+  div(class = "rc-sub", sprintf("Municipal housing report card · data as compiled November 2026 · generated %s",
+                                format(Sys.Date(), "%B %d, %Y"))),
+  div(class = "rc-disclaimer",
+      strong("Independent portfolio project. "),
+      "Built from public data by Emma Branch. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Status thresholds are illustrative.")
+)
+```
+
+## Headline indicators
+
+```{r}
+#| label: summary-table
+comparator_label <- function(id, r) {
+  if (id == "HTO_Y1") return("Target 100%")
+  if (id == "VAC") return("Reference 3%")
+  b <- bc |> filter(indicator_id == id)
+  if (is.na(r$comparator_value)) return("–")
+  sprintf("BC %s", fmt_value(id, r$comparator_value))
+}
+change_label <- function(id, r) {
+  if (is.na(r$prior_value) || id %in% c("HTO_Y1", "COMPL_RATE")) return("–")
+  d <- r$latest_value - r$prior_value
+  unit <- if (id %in% c("CHN_ALL", "CHN_RENT", "UNAFF_RENT", "VAC")) " pts" else ""
+  sprintf("%s%s%s since %s", if (d > 0) "+" else "", formatC(d, format = "f", digits = 1), unit, r$prior_year)
+}
+
+rows <- lapply(headline_ids, function(id) {
+  r  <- sc |> filter(indicator_id == id)
+  fw <- framework |> filter(indicator_id == id)
+  tags$tr(
+    tags$td(class = "rc-ind", fw$indicator_name, div(class = "rc-unit", fw$unit)),
+    tags$td(class = "rc-c", status_chip(r$status, fmt_value(id, r$latest_value),
+                                        out_of_date = isTRUE(r$out_of_date))),
+    tags$td(class = "rc-c", ifelse(is.na(r$latest_year), "–", r$latest_year)),
+    tags$td(class = "rc-c", comparator_label(id, r)),
+    tags$td(class = "rc-c", change_label(id, r)),
+    tags$td(class = "rc-c rc-status", r$status)
+  )
+})
+
+tags$table(class = "rc-table",
+  tags$thead(tags$tr(
+    tags$th("Indicator"), tags$th("Value"), tags$th("Year"),
+    tags$th("Comparator"), tags$th("Change"), tags$th("Status"))),
+  tags$tbody(rows))
+```
+
+```{r}
+#| label: legend
+p(class = "rc-note",
+  "✓ Green: meets target or benchmark. ! Amber: near it. ✕ Red: below it. ",
+  "Need and affordability indicators: lower is better, compared with the BC rate (Amber = up to 2 points above). ",
+  "Completions: compared with the BC rate (Amber = 75% to 99.9% of it). ",
+  "† = latest value older than the most recent survey year.")
+```
+
+## Housing Supply Act target
+
+```{r}
+#| label: target
+fmt_n <- function(x) ifelse(is.na(x), "–", format(x, big.mark = ","))
+hto_status <- sc |> filter(indicator_id == "HTO_Y1")
+target_text <- if (is.na(tg$y1_net_new)) {
+  sprintf("Year 1 runs %s to %s. Results had not been published when this report card was compiled.",
+          tg$y1_period_start, tg$y1_period_end)
+} else {
+  sprintf("In Year 1 (%s to %s), %s reported %s net new units against a Year 1 target of %s: %s of target.",
+          tg$y1_period_start, tg$y1_period_end, name, fmt_n(tg$y1_net_new),
+          fmt_n(tg$target_y1), fmt_value("HTO_Y1", tg$y1_pct_of_target))
+}
+src_text <- if (is.na(tg$y1_src_type)) "" else sprintf(
+  "Year 1 source: %s%s.", tg$y1_src_type,
+  if (isTRUE(tg$y1_verified_primary)) ", verified against a primary source" else ", not independently verified")
+
+div(class = "rc-target",
+  div(class = "rc-target-figs",
+    div(class = "rc-fig", div(class = "rc-fig-n", fmt_n(tg$target_5yr)), div(class = "rc-fig-l", "Five-year target (net new units)")),
+    div(class = "rc-fig", div(class = "rc-fig-n", fmt_n(tg$target_y1)), div(class = "rc-fig-l", "Year 1 target")),
+    div(class = "rc-fig", div(class = "rc-fig-n", fmt_n(tg$y1_net_new)), div(class = "rc-fig-l", "Year 1 net new units")),
+    div(class = "rc-fig", status_chip(hto_status$status, fmt_value("HTO_Y1", tg$y1_pct_of_target)),
+        div(class = "rc-fig-l", "Year 1 % of target"))
+  ),
+  p(target_text),
+  p(class = "rc-note", "Net new units = completions (occupancy permits) minus demolitions. ", src_text)
+)
+```
+
+## Trends
+
+```{r}
+#| label: trends
+series <- function(id, from = 2005) long |> filter(geo_uid == gid, indicator_id == id, year >= from, !is.na(value))
+pct  <- function(v) paste0(formatC(v, format = "f", digits = 1), "%")
+vac  <- series("VAC"); compl <- series("COMPL"); rent <- series("RENT_AVG")
+
+chart_or_note <- function(d, title, ...) {
+  div(class = "rc-chart",
+      div(class = "rc-chart-title", title),
+      if (nrow(d) >= 2) svg_linechart(d$year, d$value, width = 340, height = 170, ...)
+      else p(class = "rc-note", "No CMHC data published for this municipality."))
+}
+
+div(class = "rc-charts",
+  chart_or_note(vac, "Rental vacancy rate (%), October", ref = 3, ref_label = "3% reference", value_fmt = pct),
+  chart_or_note(rent, "Average rent ($/month), October", value_fmt = function(v) paste0("$", format(round(v), big.mark = ","))),
+  chart_or_note(compl, "Housing completions (units per year)", value_fmt = function(v) format(round(v), big.mark = ","))
+)
+```
+
+## Data notes
+
+```{r}
+#| label: notes
+notes <- c()
+ood <- sc |> filter(out_of_date, kpi_type == "Headline KPI (RAG)" | indicator_id == "RENT_CHG")
+for (i in seq_len(nrow(ood))) {
+  fw <- framework |> filter(indicator_id == ood$indicator_id[i])
+  notes <- c(notes, sprintf("%s: latest published value is from %s; later years were suppressed by CMHC.",
+                            fw$indicator_name, ood$latest_year[i]))
+}
+nodata <- sc |> filter(status == "No data")
+for (i in seq_len(nrow(nodata))) {
+  fw <- framework |> filter(indicator_id == nodata$indicator_id[i])
+  notes <- c(notes, sprintf("%s: no data published for %s.", fw$indicator_name, name))
+}
+fair <- sc |> filter(str_detect(coalesce(latest_quality, ""), "Fair"))
+for (i in seq_len(nrow(fair))) {
+  fw <- framework |> filter(indicator_id == fair$indicator_id[i])
+  notes <- c(notes, sprintf("%s: CMHC rates the latest value \"Fair (Use with Caution)\".", fw$indicator_name))
+}
+notes <- c(notes,
+  "Census indicators are from 2021, the latest available; 2020 incomes included temporary pandemic benefits, which likely lowered measured need.",
+  "Values are for the municipality (census subdivision), not the wider metropolitan area, so they will differ from published CMA figures.")
+
+tags$ul(class = "rc-notes", lapply(notes, tags$li))
+```
+
+```{r}
+#| label: footer
+div(class = "rc-footer",
+  p(strong("Sources: "),
+    "Statistics Canada, Census of Population 2016 and 2021, Table 98-10-0259-01. ",
+    "Adapted from Canada Mortgage and Housing Corporation, Housing Market Information Portal (Rental Market Survey; Starts and Completions Survey), accessed November 2026; reproduced and distributed on an \"as is\" basis with the permission of CMHC. ",
+    "Housing Supply Act targets and results: BC Government news releases, municipal progress reports, and Storeys housing targets tracker."),
+  p("Full indicator definitions, status rules, and limitations: ",
+    a(href = "../index.html#indicator-framework", "indicator framework"), ". ",
+    "Code: ", a(href = "https://github.com/emmabranch/bc-housing-indicators", "github.com/emmabranch/bc-housing-indicators"), ".")
+)
+```

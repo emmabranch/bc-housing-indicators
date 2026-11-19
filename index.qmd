@@ -171,7 +171,10 @@ kpi_col <- function(id) {
 
 cols <- list(
   geo_name  = colDef(name = "Municipality", minWidth = 170, sticky = "left",
-                     filterable = TRUE, style = list(fontWeight = 600)),
+                     filterable = TRUE, style = list(fontWeight = 600), html = TRUE,
+                     cell = function(value) sprintf(
+                       '<a href="reports/%s.html" title="Open report card">%s</a>',
+                       slugify(value), value)),
   hto_group = colDef(name = "Group", width = 70, align = "center", filterable = TRUE)
 )
 for (id in headline_ids) cols[[paste0(id, "__latest_value")]] <- kpi_col(id)
@@ -198,7 +201,7 @@ div(
     theme = reactableTheme(headerStyle = list(fontSize = "0.8rem", color = "#52514e"))
   ),
   p(class = "muted small",
-    "✓ Green, ! Amber, ✕ Red, – No data, … Not yet assessed. † = latest value older than the most recent survey year (later years suppressed). Hover a value for year and data quality. Sparklines: dashed line on vacancy = 3% reference.")
+    "Click a municipality name for its printable report card. ✓ Green, ! Amber, ✕ Red, – No data, … Not yet assessed. † = latest value older than the most recent survey year (later years suppressed). Hover a value for year and data quality. Sparklines: dashed line on vacancy = 3% reference.")
 )
 ```
 
@@ -221,7 +224,8 @@ popup_for <- function(gid) {
     sprintf("<tr><td>%s</td><td style='text-align:right'>%s</td><td>%s %s</td></tr>",
             short_names[[id]], fmt_value(id, x$latest_value), style_for(x$status)$icon, x$status)
   }, character(1))
-  sprintf("<strong>%s</strong> (Group %s)<table class='popup-table'>%s</table>", name, grp, paste(lines, collapse = ""))
+  sprintf("<strong>%s</strong> (Group %s)<table class='popup-table'>%s</table><a href='reports/%s.html'>Open report card</a>",
+          name, grp, paste(lines, collapse = ""), slugify(name))
 }
 popups <- setNames(vapply(boundaries$geo_uid, popup_for, character(1)), boundaries$geo_uid)
 
@@ -232,7 +236,7 @@ for (id in headline_ids) {
   m <- m |> addPolygons(
     data = d, group = short_names[[id]],
     fillColor = unname(vapply(d$status, function(s) style_for(s)$fill, character(1))),
-    fillOpacity = 0.75, color = "#ffffff", weight = 1.5,
+    fillOpacity = 0.75, color = "#52514e", weight = 1,
     label = sprintf("%s: %s (%s)", d$municipality,
                     vapply(d$latest_value, function(v) fmt_value(id, v), character(1)), d$status),
     popup = unname(popups[d$geo_uid]),

@@ -128,3 +128,8 @@ status_legend_line <- function(counts) {
              sprintf("%s %d", s, counts[[s]]))
       }))
 }
+
+# ---- File-name slug for report cards (e.g. "City of Langley" -> "city-of-langley") ----
+slugify <- function(x) {
+  x |> str_to_lower() |> str_replace_all("[^a-z0-9]+", "-") |> str_remove_all("^-|-$")
+}

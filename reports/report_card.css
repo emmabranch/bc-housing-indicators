@@ -1,0 +1,53 @@
+/* reports/report_card.css: one- to two-page municipal report card */
+:root { --ink: #0b0b0b; --ink-2: #52514e; --hair: #e1e0d9; --accent: #1f3b57; }
+body { color: var(--ink); font-size: 0.92rem; }
+#title-block-header { display: none; }          /* custom header used instead */
+main { max-width: 900px; }
+h2 { font-size: 1.05rem; color: var(--accent); border-bottom: 2px solid var(--accent);
+     padding-bottom: 3px; margin-top: 1.3rem; }
+
+.rc-header { border-top: 6px solid var(--accent); padding-top: 10px; }
+.rc-kicker { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-2); }
+.rc-title { font-size: 1.9rem; margin: 2px 0 2px; font-weight: 700; }
+.rc-sub { font-size: 0.8rem; color: var(--ink-2); }
+.rc-disclaimer { margin-top: 8px; font-size: 0.75rem; background: #f7f6f2;
+                 border-left: 4px solid var(--accent); padding: 6px 10px; }
+
+.rc-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.rc-table th { font-size: 0.72rem; text-transform: uppercase; color: var(--ink-2);
+               border-bottom: 1px solid var(--ink-2); padding: 4px 6px; text-align: center; }
+.rc-table th:first-child { text-align: left; }
+.rc-table td { border-bottom: 1px solid var(--hair); padding: 5px 6px; vertical-align: middle; }
+.rc-ind { font-weight: 600; }
+.rc-unit { font-weight: 400; font-size: 0.72rem; color: var(--ink-2); }
+.rc-c { text-align: center; }
+.rc-status { font-size: 0.78rem; color: var(--ink-2); }
+.rc-note { font-size: 0.75rem; color: var(--ink-2); margin-top: 4px; }
+
+.rc-target-figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 6px; }
+.rc-fig { border: 1px solid var(--hair); border-radius: 6px; padding: 8px 10px; background: #fcfcfb; }
+.rc-fig-n { font-size: 1.4rem; font-weight: 700; }
+.rc-fig-l { font-size: 0.72rem; color: var(--ink-2); margin-top: 2px; }
+
+.rc-charts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.rc-chart-title { font-size: 0.78rem; font-weight: 600; margin-bottom: 2px; }
+.rc-notes { font-size: 0.8rem; }
+.rc-footer { margin-top: 1.2rem; font-size: 0.72rem; color: var(--ink-2); border-top: 1px solid var(--hair); padding-top: 6px; }
+
+/* Status chips (shared with dashboard) */
+.chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 10px;
+        font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.chip-flag { font-weight: 700; }
+.muted { color: var(--ink-2); }
+
+/* Print: fit on one or two letter pages, keep colours */
+@media print {
+  @page { size: letter; margin: 0.5in; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 0.8rem; }
+  main { max-width: none; }
+  h2 { break-after: avoid; }
+  .rc-table, .rc-target, .rc-charts { break-inside: avoid; }
+  a { color: var(--ink); text-decoration: none; }
+}
+.rc-table td.rc-ind { width: 34%; }

@@ -10,7 +10,8 @@ scripts <- c(
   "03_get_cmhc.R",
   "04_housing_targets.R",
   "05_build_indicators.R",
-  "06_boundaries.R"
+  "06_boundaries.R",
+  "07_render_report_cards.R"
 )
 
 for (s in scripts) {
