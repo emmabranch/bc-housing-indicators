@@ -6,7 +6,6 @@
   --accent: #2a5d8f;
 }
 body { color: var(--ink); }
-.navbar { background-color: #1f3b57 !important; }
 .muted { color: var(--ink-2); }
 .small { font-size: 0.8rem; }
 
@@ -57,3 +56,47 @@ body { color: var(--ink); }
 .status-bar, .status-counts { display: flex !important; flex-direction: row !important; flex: none !important; }
 .hbar-row { display: grid !important; flex: none !important; }
 .kpi-grid { align-content: start; grid-auto-rows: max-content; height: auto !important; }
+
+/* ---------- Hero banner (Overview) ---------- */
+.card:has(.hero) { background: transparent; box-shadow: none; padding: 0; }
+.card:has(.hero) .card-body { padding: 0; }
+.hero {
+  position: relative; overflow: hidden; height: 100%;
+  border-radius: 16px; color: #ffffff;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(43, 179, 160, 0.35) 0%, rgba(43, 179, 160, 0) 45%),
+    linear-gradient(135deg, #0b2233 0%, #1f4e79 60%, #2471a3 100%);
+  padding: 1.6rem 2rem 0;
+  display: flex !important; flex-direction: column !important;
+}
+.hero-text { display: block !important; flex: none !important; max-width: 60rem; }
+.eyebrow { display: block !important; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+           text-transform: uppercase; color: #9fe3d8; margin-bottom: 0.4rem; }
+.hero-title { font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: 2.1rem;
+              line-height: 1.1; letter-spacing: -0.015em; color: #ffffff; margin: 0 0 0.6rem; }
+.hero-accent { color: #5fd3c2; }
+.hero-lede { font-size: 0.98rem; opacity: 0.92; margin: 0 0 0.9rem; max-width: 52rem; }
+.hero-buttons { display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 10px; flex: none !important; }
+.btn-pill { display: inline-block; padding: 0.45rem 1.05rem; border-radius: 999px; font-weight: 600;
+            font-size: 0.88rem; text-decoration: none; transition: transform 0.15s ease, background 0.15s ease; }
+.btn-pill:hover { transform: translateY(-1px); }
+.btn-pill.solid { background: #2bb3a0; color: #0b2233; }
+.btn-pill.solid:hover { background: #5fd3c2; color: #0b2233; }
+.btn-pill.ghost { border: 1px solid rgba(255, 255, 255, 0.55); color: #ffffff; background: rgba(255, 255, 255, 0.06); }
+.btn-pill.ghost:hover { background: rgba(255, 255, 255, 0.16); color: #ffffff; }
+.hero-stripes { display: block !important; flex: none !important; margin-top: auto; padding-top: 1rem; }
+.hero-stripes svg { display: block; width: 100%; height: 26px; border-radius: 6px; }
+.stripes-note { display: block !important; font-size: 0.7rem; opacity: 0.75; margin-top: 4px; }
+.hero-disclaimer { display: block !important; flex: none !important; font-size: 0.72rem; opacity: 0.7;
+                   padding: 0.35rem 0 0.8rem; }
+
+/* ---------- KPI tiles: white, with a coloured top edge, lift on hover ---------- */
+.kpi-tile { background: #ffffff; border: 1px solid #ece9e1; border-top: 4px solid #2471a3;
+            box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.kpi-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16, 24, 40, 0.10); }
+.kpi-name { font-family: "Fraunces", Georgia, serif; font-size: 1rem; }
+.kpi-big { color: #1f4e79; }
+
+/* Tables inherit the soft look */
+.rt-table { font-size: 0.86rem; }
+.rt-th { font-size: 0.76rem !important; }

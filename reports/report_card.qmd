@@ -45,6 +45,23 @@ headline_ids <- c("HTO_Y1", "COMPL_RATE", "CHN_ALL", "CHN_RENT", "UNAFF_RENT", "
 
 ```{r}
 #| label: header
+all_munis <- scorecard |> filter(geo_level == "Municipality") |> distinct(geo_name, hto_group) |> arrange(geo_name)
+jump_options <- lapply(all_munis$geo_name, function(m)
+  tags$option(value = paste0(slugify(m), ".html"), selected = if (m == name) NA else NULL, m))
+
+tagList(
+tags$nav(class = "rc-nav",
+  a(class = "rc-nav-brand", href = "../index.html", "BC Municipal Housing Indicators"),
+  div(class = "rc-nav-links",
+    a(href = "../index.html#overview", "Overview"),
+    a(href = "../index.html#scorecard", "Scorecard"),
+    a(href = "../index.html#map", "Map"),
+    a(href = "../index.html#indicator-framework", "Indicator framework"),
+    a(href = "../index.html#about", "About")),
+  tags$label(class = "rc-jump", "Report card:",
+    tags$select(onchange = "window.location.href = this.value;", `aria-label` = "Jump to another municipality",
+                jump_options))
+),
 div(class = "rc-header",
   div(class = "rc-kicker", sprintf("Housing Target Order Group %s  ·  Census subdivision %s", grp, gid)),
   h1(class = "rc-title", name),
@@ -53,7 +70,7 @@ div(class = "rc-header",
   div(class = "rc-disclaimer",
       strong("Independent portfolio project. "),
       "Built from public data by Emma Branch. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Status thresholds are illustrative.")
-)
+))
 ```
 
 ## Headline indicators

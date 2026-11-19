@@ -1,12 +1,22 @@
 ---
 title: "BC Municipal Housing Indicators"
+resources:
+  - favicon.svg
 author: "Emma Branch"
 format:
   dashboard:
     orientation: rows
     scrolling: true
-    theme: cosmo
+    theme: [cosmo, theme.scss]
     css: styles.css
+    include-in-header:
+      text: '<link rel="icon" type="image/svg+xml" href="favicon.svg">'
+    include-after-body:
+      text: |
+        <script>
+        // Start each dashboard page at the top when switching pages
+        document.addEventListener("shown.bs.tab", function () { window.scrollTo(0, 0); });
+        </script>
     nav-buttons:
       - icon: github
         href: https://github.com/emmabranch/bc-housing-indicators
@@ -46,11 +56,51 @@ latest_period <- setNames(framework$latest_period, framework$indicator_id)
 
 # Overview
 
-## Row {height="70px"}
+## Row {height="365px"}
 
-::: {.card .disclaimer}
-**Independent portfolio project.** Built from public data by Emma Branch. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Thresholds are illustrative. See *About* for sources and limitations.
-:::
+```{r}
+#| label: hero
+# Decorative stripes: BC rental vacancy rate by year, one stripe per year,
+# warm below the 3% reference and cool above it (blue-red diverging, grey midpoint)
+bc_vac_all <- long |> filter(geo_uid == "59", indicator_id == "VAC", !is.na(value)) |> arrange(year)
+stripe_col <- function(v) {
+  d <- pmax(-1, pmin(1, (v - 3) / 2.5))
+  if (d < 0) grDevices::rgb(grDevices::colorRamp(c("#f0efec", "#c4453a"))(-d), maxColorValue = 255)
+  else       grDevices::rgb(grDevices::colorRamp(c("#f0efec", "#2a6db0"))(d),  maxColorValue = 255)
+}
+n_yr <- nrow(bc_vac_all)
+stripes <- paste(sprintf(
+  '<rect x="%d" y="0" width="1.02" height="1" fill="%s"><title>%d: %s%%</title></rect>',
+  seq_len(n_yr) - 1, vapply(bc_vac_all$value, stripe_col, character(1)),
+  bc_vac_all$year, formatC(bc_vac_all$value, format = "f", digits = 1)), collapse = "")
+
+n_green_hto <- sum(munis_sc$indicator_id == "HTO_Y1" & munis_sc$status == "Green")
+n_rated_hto <- sum(munis_sc$indicator_id == "HTO_Y1" & munis_sc$status %in% c("Green", "Amber", "Red"))
+
+div(class = "hero",
+  div(class = "hero-text",
+    div(class = "eyebrow", "Independent portfolio project · public data"),
+    h1(class = "hero-title", "40 BC municipalities.", tags$br(),
+       span(class = "hero-accent", "One documented housing scorecard.")),
+    p(class = "hero-lede",
+      "Housing Supply Act targets, core housing need, affordability, rental vacancy, and new supply for every municipality with a Housing Target Order, compared with British Columbia. ",
+      sprintf("%d of %d municipalities assessed so far met their Year 1 housing target.", n_green_hto, n_rated_hto)),
+    div(class = "hero-buttons",
+      a(class = "btn-pill solid", href = "#scorecard", "Explore the scorecard"),
+      a(class = "btn-pill ghost", href = "#map", "Open the map"),
+      a(class = "btn-pill ghost", href = "reports/vancouver.html", "Example report card"))
+  ),
+  div(class = "hero-stripes",
+    HTML(sprintf('<svg viewBox="0 0 %d 1" preserveAspectRatio="none" role="img" aria-label="BC rental vacancy rate by year, %d to %d">%s</svg>',
+                 n_yr, min(bc_vac_all$year), max(bc_vac_all$year), stripes)),
+    div(class = "stripes-note", sprintf(
+      "Stripes: BC rental vacancy rate, %d to %d, one per year. Red = below the 3%% reference, blue = above. Hover for values.",
+      min(bc_vac_all$year), max(bc_vac_all$year)))
+  ),
+  div(class = "hero-disclaimer",
+      "Built by Emma Branch from public data. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Thresholds are illustrative; see About.")
+)
+```
 
 ## Row {height="470px"}
 

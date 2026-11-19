@@ -1,0 +1,54 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+$primary:    #1f4e79;
+$secondary:  #5b7083;
+$body-bg:    #f6f4ef;
+$body-color: #1f2a33;
+$link-color: #1f6fb2;
+
+$navbar-bg: #0b2233;
+$navbar-fg: #c9d6e0;
+$navbar-hl: #ffffff;
+
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$headings-font-family:   "Fraunces", Georgia, serif;
+$headings-font-weight:   700;
+$border-radius: 12px;
+
+/*-- scss:rules --*/
+
+/* ---------- Sticky header: the menu stays visible while scrolling ---------- */
+/* The dashboard body is a fixed-height flex container, so position: sticky
+   stops working after one screen; fix the header to the viewport instead. */
+#quarto-dashboard-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1030;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+}
+body.quarto-dashboard { padding-top: 50px; }
+html { scroll-padding-top: 64px; }
+.navbar-title { font-family: $headings-font-family; font-weight: 800; letter-spacing: -0.01em; }
+.navbar .nav-link { font-weight: 500; }
+.navbar .nav-link.active { box-shadow: inset 0 -3px 0 #2bb3a0; }
+
+/* ---------- Cards as soft panels ---------- */
+.card {
+  border: none;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+.card-header {
+  /* short gradient accent under each card title */
+  background: linear-gradient(90deg, #2471a3, #2bb3a0) no-repeat left 1rem bottom 0.25rem / 44px 4px;
+  padding-bottom: 0.85rem;
+  border-bottom: none;
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding-top: 0.9rem;
+}
+
+.card h3 { font-size: 1.15rem; margin-top: 1.2rem; }
