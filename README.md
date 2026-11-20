@@ -45,6 +45,8 @@ Full definitions, status rules, and limitations are in `data/indicator_framework
 - **Housing Supply Act targets and Year 1 results**: BC Government news releases and municipal progress reports (primary), and the Storeys housing targets tracker (secondary). No machine-readable source exists, so these were compiled by hand; see below.
 - **Boundaries**: Statistics Canada, 2021 Census cartographic boundary files (census subdivisions). Basemap: Esri World Gray Canvas.
 
+Code: MIT licence (see [`LICENSE`](LICENSE)). Data keep their original licences, listed above.
+
 ## Data quality and validation
 
 The full log is in `qa/data_quality_log.md`. Main points:
