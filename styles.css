@@ -3,7 +3,7 @@
   --ink: #0b0b0b;
   --ink-2: #52514e;
   --hair: #e1e0d9;
-  --accent: #2a5d8f;
+  --accent: #3b3fc4;
 }
 body { color: var(--ink); }
 .muted { color: var(--ink-2); }
@@ -64,24 +64,24 @@ body { color: var(--ink); }
   position: relative; overflow: hidden; height: 100%;
   border-radius: 16px; color: #ffffff;
   background:
-    radial-gradient(circle at 88% 10%, rgba(43, 179, 160, 0.35) 0%, rgba(43, 179, 160, 0) 45%),
-    linear-gradient(135deg, #0b2233 0%, #1f4e79 60%, #2471a3 100%);
+    radial-gradient(circle at 88% 10%, rgba(123, 128, 242, 0.35) 0%, rgba(123, 128, 242, 0) 45%),
+    linear-gradient(135deg, #0b2233 0%, #23285e 60%, #3b3fc4 100%);
   padding: 2.2rem 2.6rem 0;
   display: flex !important; flex-direction: column !important;
 }
 .hero-text { display: block !important; flex: none !important; max-width: 60rem; }
 .eyebrow { display: block !important; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-           text-transform: uppercase; color: #9fe3d8; margin-bottom: 0.4rem; }
+           text-transform: uppercase; color: #aab0ff; margin-bottom: 0.4rem; }
 .hero-title { font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: 2.3rem;
               line-height: 1.15; letter-spacing: -0.015em; color: #ffffff; margin: 0 0 0.6rem; }
-.hero-accent { color: #5fd3c2; }
+.hero-accent { color: #aab0ff; }
 .hero-lede { font-size: 1rem; line-height: 1.6; opacity: 0.92; margin: 0 0 1.3rem; max-width: 46rem; }
 .hero-buttons { display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 10px; flex: none !important; }
 .btn-pill { display: inline-block; padding: 0.45rem 1.05rem; border-radius: 999px; font-weight: 600;
             font-size: 0.88rem; text-decoration: none; transition: transform 0.15s ease, background 0.15s ease; }
 .btn-pill:hover { transform: translateY(-1px); }
-.btn-pill.solid { background: #2bb3a0; color: #0b2233; }
-.btn-pill.solid:hover { background: #5fd3c2; color: #0b2233; }
+.btn-pill.solid { background: #aab0ff; color: #0b2233; }
+.btn-pill.solid:hover { background: #aab0ff; color: #0b2233; }
 .btn-pill.ghost { border: 1px solid rgba(255, 255, 255, 0.55); color: #ffffff; background: rgba(255, 255, 255, 0.06); }
 .btn-pill.ghost:hover { background: rgba(255, 255, 255, 0.16); color: #ffffff; }
 .hero-stripes { display: block !important; flex: none !important; margin-top: auto; padding-top: 1.4rem; }
@@ -91,11 +91,11 @@ body { color: var(--ink); }
                    padding: 0.45rem 0 1.2rem; }
 
 /* ---------- KPI tiles: white, with a coloured top edge, lift on hover ---------- */
-.kpi-tile { background: #ffffff; border: 1px solid #ece9e1; border-top: 4px solid #2471a3;
+.kpi-tile { background: #ffffff; border: 1px solid #ece9e1; border-top: 4px solid #3b3fc4;
             box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05); transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .kpi-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16, 24, 40, 0.10); }
 .kpi-name { font-family: "Fraunces", Georgia, serif; font-size: 1rem; }
-.kpi-big { color: #1f4e79; }
+.kpi-big { color: #2d3199; }
 
 /* Tables inherit the soft look */
 .rt-table { font-size: 0.86rem; }
@@ -109,10 +109,10 @@ body { color: var(--ink); }
                backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
                border-radius: 16px; padding: 1.1rem 1.4rem 0.6rem; }
 .glance-title { display: block !important; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
-                text-transform: uppercase; color: #9fe3d8; margin-bottom: 0.5rem; }
+                text-transform: uppercase; color: #aab0ff; margin-bottom: 0.5rem; }
 .glance-item { display: block !important; padding: 0.55rem 0; border-top: 1px solid rgba(255, 255, 255, 0.14); }
 .glance-n { display: block !important; font-family: "Fraunces", Georgia, serif; font-weight: 800;
             font-size: 1.9rem; line-height: 1.05; color: #ffffff; }
-.glance-item:nth-of-type(3) .glance-n { color: #5fd3c2; }  /* highlight the target result */
+.glance-item:nth-of-type(3) .glance-n { color: #aab0ff; }  /* highlight the target result */
 .glance-l { display: block !important; font-size: 0.78rem; opacity: 0.8; margin-top: 2px; }
 @media (max-width: 1000px) { .hero-glance { display: none !important; } }

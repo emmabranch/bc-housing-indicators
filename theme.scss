@@ -31,7 +31,7 @@ body.quarto-dashboard { padding-top: 50px; }
 html { scroll-padding-top: 64px; }
 .navbar-title { font-family: $headings-font-family; font-weight: 800; letter-spacing: -0.01em; }
 .navbar .nav-link { font-weight: 500; }
-.navbar .nav-link.active { box-shadow: inset 0 -3px 0 #2bb3a0; }
+.navbar .nav-link.active { box-shadow: inset 0 -3px 0 #aab0ff; }
 
 /* ---------- Cards as soft panels ---------- */
 .card {
@@ -42,7 +42,7 @@ html { scroll-padding-top: 64px; }
 }
 .card-header {
   /* short gradient accent under each card title */
-  background: linear-gradient(90deg, #2471a3, #2bb3a0) no-repeat left 1rem bottom 0.25rem / 44px 4px;
+  background: linear-gradient(90deg, #3b3fc4, #7b80f2) no-repeat left 1rem bottom 0.25rem / 44px 4px;
   padding-bottom: 0.85rem;
   border-bottom: none;
   font-family: $headings-font-family;
