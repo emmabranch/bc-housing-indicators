@@ -1,13 +1,14 @@
 # BC Municipal Housing Indicators
 
-**Live dashboard:** https://emmabranch.github.io/bc-housing-indicators/
-**Example report card:** https://emmabranch.github.io/bc-housing-indicators/reports/vancouver.html
-
 A documented housing indicator framework and corporate-style performance scorecard for the 40 British Columbia municipalities with Housing Target Orders under the *Housing Supply Act*, with British Columbia as a benchmark. Built in R and Quarto from public data.
+
+**Live dashboard:** https://emmabranch.github.io/bc-housing-indicators/ · **Example report card:** [Vancouver](https://emmabranch.github.io/bc-housing-indicators/reports/vancouver.html) · **More projects:** [github.com/emmabranch](https://github.com/emmabranch)
+
+![Screenshot of the housing indicators dashboard](images/screenshot.png)
 
 > **Independent portfolio project.** Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Red, amber, and green thresholds are illustrative choices documented in the indicator framework, not official standards.
 
-## What it contains
+## What it does
 
 | Component | Where |
 |---|---|
@@ -37,7 +38,7 @@ A documented housing indicator framework and corporate-style performance scoreca
 
 Full definitions, status rules, and limitations are in `data/indicator_framework.csv` and on the dashboard's *Indicator framework* page.
 
-## Data sources
+## Data and licences
 
 - **Statistics Canada**, Census of Population 2016 and 2021, Table 98-10-0259-01, *Housing indicators by tenure*, via the `cansim` R package. Statistics Canada Open Licence.
 - **CMHC Housing Market Information Portal**: Rental Market Survey and Starts and Completions Survey, via the `cmhc` R package. *Adapted from Canada Mortgage and Housing Corporation, Housing Market Information Portal, accessed November 2026. This information is reproduced and distributed on an "as is" basis with the permission of CMHC.*
@@ -54,15 +55,7 @@ The full log is in `qa/data_quality_log.md`. Main points:
 - **Housing target values are traceable.** Each row of `data/housing_targets.csv` records its source URL and whether it was checked against a primary source. 14 of 30 Year 1 results are verified against BC Government releases or municipal progress reports, including a spot check of three Group 2 values against the municipal PDFs (all matched). A secondary source disagreed with official figures for some interim six-month results, so only full Year 1 results are used.
 - **Benchmarks are labelled honestly.** The 3% vacancy rate is an industry rule of thumb that CMHC's 2026 mid-year rental market update says does not hold across all markets; it is used as a reference, not a target.
 
-## Key limitations
-
-- Census indicators are from 2021, the latest available. Incomes in 2020 included temporary pandemic benefits, which likely lowered measured need.
-- Census subdivision values should not be compared with published census metropolitan area (CMA) figures.
-- Housing target Year 1 periods differ by group (ending 2024 or 2025), and Group 4 results had not been published at the time of compilation.
-- CMHC completions are gross; Housing Supply Act net new units subtract demolitions, so the two do not match.
-- CMHC rental data cover purpose-built rentals only.
-
-## Reproducing
+## How to reproduce
 
 Requires R (4.1 or later) and Quarto. Packages: `tidyverse`, `here`, `cansim`, `cmhc`, `sf`, `leaflet`, `reactable`, `htmltools`, `quarto`.
 
@@ -85,8 +78,18 @@ To render a single report card, run in a terminal from the project root: `quarto
 
 Raw downloads are cached in `data-raw/`, which is not committed.
 
-## Author
+## Limitations
 
-Emma Branch, epidemiologist and data analyst. [github.com/emmabranch](https://github.com/emmabranch)
+- Census indicators are from 2021, the latest available. Incomes in 2020 included temporary pandemic benefits, which likely lowered measured need.
+- Census subdivision values should not be compared with published census metropolitan area (CMA) figures.
+- Housing target Year 1 periods differ by group (ending 2024 or 2025), and Group 4 results had not been published at the time of compilation.
+- CMHC completions are gross; Housing Supply Act net new units subtract demolitions, so the two do not match.
+- CMHC rental data cover purpose-built rentals only.
+
+## About me
 
 I am new to housing data; this project was a way to learn the main public sources and indicators and to show how I approach indicator definition, data quality, and performance reporting. Corrections are welcome via GitHub issues.
+
+I'm Emma Branch, an epidemiologist and data analyst in British Columbia, and a PhD candidate in Population and Public Health at the University of British Columbia. I've spent about 10 years working with health research data, including registry analytics, REDCap database design, data governance, and performance measurement. I mostly work in R, SAS, and SQL, and build reports and tools with Quarto, Shiny, leaflet, and Power BI. Lately I've been applying the same habits to environmental and ocean data, mostly because I like maps and fish.
+
+[More projects](https://github.com/emmabranch) · [LinkedIn](https://www.linkedin.com/in/embranch/) · emma.branch@gmail.com
