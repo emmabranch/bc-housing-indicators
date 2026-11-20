@@ -116,3 +116,57 @@ body { color: var(--ink); }
 .glance-item:nth-of-type(3) .glance-n { color: #aab0ff; }  /* highlight the target result */
 .glance-l { display: block !important; font-size: 0.78rem; opacity: 0.8; margin-top: 2px; }
 @media (max-width: 1000px) { .hero-glance { display: none !important; } }
+/* ---------- Full-width hero with a wave (shared portfolio look) ----------
+   The vacancy stripes sit behind the text under a dark overlay, the hero runs
+   edge to edge, and the headline indicators card rises over the wave. */
+.dashboard-page .card:has(.hero) {
+  width: 100vw; max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-top: -28px;
+  border-radius: 0; overflow: visible;
+}
+.hero {
+  border-radius: 0 !important;
+  background: #0b2233 !important;
+  padding: 3.2rem 2rem 6.5rem !important;
+}
+.hero .hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero .hero-bg svg { display: block; width: 100%; height: 100%; }
+.hero .hero-bg rect { stroke: rgba(11, 34, 51, 0.9); stroke-width: 3px; vector-effect: non-scaling-stroke; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(123, 128, 242, 0.32) 0%, rgba(123, 128, 242, 0) 45%),
+    linear-gradient(100deg, rgba(11, 34, 51, 0.97) 0%, rgba(24, 28, 70, 0.88) 50%, rgba(35, 40, 94, 0.55) 100%);
+}
+.hero > .hero-top, .hero > .hero-note, .hero > .hero-disclaimer {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1236px; margin-left: auto; margin-right: auto;
+}
+.hero > * { flex-shrink: 0 !important; }
+.hero > .hero-note { display: block !important; flex: none !important; font-size: 0.72rem; opacity: 0.75; margin-top: auto !important; padding-top: 1.4rem; }
+.hero > .hero-disclaimer { flex: none !important; padding: 0.3rem 0 0 !important; }
+.hero .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 80px; z-index: 3; }
+.hero .hero-wave path { fill: var(--bs-body-bg); }
+
+/* The headline indicators card rises over the wave */
+.dashboard-page .card:has(.kpi-grid) { position: relative; z-index: 4; margin-top: -4.5rem; }
+
+@media (max-width: 700px) {
+  .hero { padding: 2.2rem 1.1rem 5.5rem !important; }
+  .dashboard-page .card:has(.kpi-grid) { margin-top: -3.5rem; }
+}
+
+
+/* ---------- Hero on phones: calmer and more compact ---------- */
+@media (max-width: 700px) {
+  .hero::before {
+    background:
+      radial-gradient(circle at 85% 10%, rgba(123, 128, 242, 0.22) 0%, rgba(123, 128, 242, 0) 45%),
+      linear-gradient(180deg, rgba(11, 34, 51, 0.95) 0%, rgba(20, 26, 66, 0.9) 100%);
+  }
+  .hero .hero-title { font-size: 1.75rem !important; line-height: 1.15 !important; }
+  .hero .hero-lede { font-size: 0.95rem !important; }
+  .hero .btn-pill { font-size: 0.85rem; padding: 0.4rem 0.9rem; }
+  .hero { padding: 1.6rem 1.1rem 5rem !important; }
+}
