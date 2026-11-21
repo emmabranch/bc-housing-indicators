@@ -382,6 +382,24 @@ An independent portfolio project showing how operational and performance data fo
 - Housing target Year 1 periods differ by group, and Group 4 results were not yet published at the time of compilation.
 - CMHC completions are gross; Housing Supply Act net new units subtract demolitions, so the two do not match.
 
+### About me
+
+I'm Emma Branch, an epidemiologist and data analyst in British Columbia, and a PhD candidate in Population and Public Health at the University of British Columbia. I've spent about 10 years working with health research data, including registry analytics, REDCap database design, data governance, and performance measurement. I mostly work in R, SAS, and SQL, and build reports and tools with Quarto, Shiny, leaflet, and Power BI. Lately I've been applying the same habits to environmental and ocean data, mostly because I like maps and fish.
+
+I am new to housing data; this project was a way to learn the main public sources and indicators and to show how I approach indicator definition, data quality, and performance reporting. Corrections are welcome via GitHub issues.
+
+### More projects
+
+- [REDCap starter kit](https://emmabranch.github.io/redcap-starter-kit/): from REDCap project to quality-checked report
+- [BC fish stock status](https://emmabranch.github.io/bc-fish-stock-status/): an exploratory rapid assessment toolkit
+- [BC lightstation sea temperatures](https://emmabranch.github.io/bc-lightstation-qc/): quality control and the 2014 to 2016 marine heatwave
+- [BC wildfire history](https://emmabranch.github.io/bc-wildfire-bigquery/): 76 fire seasons in Google BigQuery
+- [VCH climate equity profile](https://emmabranch.github.io/vch-climate-equity-profile/): heat, smoke, and green cover in VCH communities
+- [BC Salmon Explorer](https://emmabranch.shinyapps.io/bc-salmon-explorer/): one map of how BC's salmon are doing
+- [Ontario mining claims and caribou](https://emmabranch.github.io/ontario-claims-caribou/): caribou ranges under active mining claims
+
+[GitHub](https://github.com/emmabranch) · [LinkedIn](https://www.linkedin.com/in/embranch/) · emma.branch@gmail.com
+
 :::
 
 ```{r}
