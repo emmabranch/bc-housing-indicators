@@ -371,7 +371,7 @@ An independent portfolio project showing how operational and performance data fo
 
 ### Methods in brief
 
-- R pipeline: `R/01` to `R/06` download, verify, and tidy the data; `R/05_build_indicators.R` builds the indicator database, scorecard, framework, and data dictionary.
+- R pipeline: `R/01` to `R/04` and `R/06` download, verify, and tidy the data; `R/05_build_indicators.R` builds the indicator database, scorecard, framework, and data dictionary; `R/07_render_report_cards.R` renders the report card for each municipality.
 - All joins use Statistics Canada census subdivision codes, not names (names are not unique).
 - BC benchmarks were checked against Statistics Canada's published figures (core housing need 14.9% in 2016 and 13.4% in 2021; renters 29.9% and 24.7%), and match exactly.
 
