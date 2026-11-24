@@ -72,7 +72,7 @@ body { color: var(--ink); }
 .hero-text { display: block !important; flex: none !important; max-width: 60rem; }
 .eyebrow { display: block !important; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
            text-transform: uppercase; color: #aab0ff; margin-bottom: 0.4rem; }
-.hero-title { font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: 2.3rem;
+.hero-title { font-weight: 800; font-size: 2.3rem;
               line-height: 1.15; letter-spacing: -0.015em; color: #ffffff; margin: 0 0 0.6rem; }
 .hero-accent { color: #aab0ff; }
 .hero-lede { font-size: 1rem; line-height: 1.6; opacity: 0.92; margin: 0 0 1.3rem; max-width: 46rem; }
@@ -94,7 +94,7 @@ body { color: var(--ink); }
 .kpi-tile { background: #ffffff; border: 1px solid #ece9e1; border-top: 4px solid #3b3fc4;
             box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05); transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .kpi-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16, 24, 40, 0.10); }
-.kpi-name { font-family: "Fraunces", Georgia, serif; font-size: 1rem; }
+.kpi-name { font-size: 1rem; }
 .kpi-big { color: #2d3199; }
 
 /* Tables inherit the soft look */
@@ -111,7 +111,7 @@ body { color: var(--ink); }
 .glance-title { display: block !important; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
                 text-transform: uppercase; color: #aab0ff; margin-bottom: 0.5rem; }
 .glance-item { display: block !important; padding: 0.55rem 0; border-top: 1px solid rgba(255, 255, 255, 0.14); }
-.glance-n { display: block !important; font-family: "Fraunces", Georgia, serif; font-weight: 800;
+.glance-n { display: block !important; font-weight: 800;
             font-size: 1.9rem; line-height: 1.05; color: #ffffff; }
 .glance-item:nth-of-type(3) .glance-n { color: #aab0ff; }  /* highlight the target result */
 .glance-l { display: block !important; font-size: 0.78rem; opacity: 0.8; margin-top: 2px; }
@@ -169,4 +169,113 @@ body { color: var(--ink); }
   .hero .hero-lede { font-size: 0.95rem !important; }
   .hero .btn-pill { font-size: 0.85rem; padding: 0.4rem 0.9rem; }
   .hero { padding: 1.6rem 1.1rem 5rem !important; }
+}
+
+
+/* =====================================================================
+   Portfolio edition of the Flash sheet look (November 2026)
+   Kept last so it wins over the older rules above. Ink outlines, hard
+   shadows, square corners, a framed hero with the house motif, no wave.
+   ===================================================================== */
+:root { --ink: #111111; --ink-2: #5A544A; --hair: #d8d2c4; --accent: #3b3fc4; }
+
+/* Hero: a framed block with the vacancy stripes inside */
+.dashboard-page .card:has(.hero) {
+  width: auto; max-width: none; margin-left: 0; margin-top: 0;
+  border: none; box-shadow: none; background: transparent; overflow: visible;
+}
+.hero {
+  border: 3px solid #111111 !important;
+  box-shadow: 10px 10px 0 #111111;
+  background: #111111 !important;
+  padding: 3rem 2rem 6rem !important;
+}
+.hero::before {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(123, 128, 242, 0.25) 0%, rgba(123, 128, 242, 0) 45%),
+    linear-gradient(100deg, rgba(17, 17, 17, 0.96) 0%, rgba(17, 17, 17, 0.84) 50%, rgba(17, 17, 17, 0.45) 100%);
+}
+.hero .hero-bg rect { stroke: rgba(17, 17, 17, 0.9); }
+.hero .hero-wave { display: none !important; }
+.eyebrow {
+  display: inline-block !important; width: fit-content;
+  font-family: "Space Mono", monospace; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: #111111; background: #F3EEE3; border: 2px solid #111111; padding: 0.2rem 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.hero-title { font-weight: 800; font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+.hero > .hero-note, .stripes-note { font-family: "Space Mono", monospace; }
+.btn-pill {
+  border-radius: 0; border: 3px solid #111111; font-weight: 800; font-size: 0.95rem;
+  padding: 0.5rem 1.15rem; box-shadow: 4px 4px 0 #F3EEE3;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn-pill:hover, .btn-pill:focus { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #F3EEE3; }
+.btn-pill.solid, .btn-pill.solid:hover { background: #aab0ff; color: #111111; }
+.btn-pill.ghost, .btn-pill.ghost:hover { background: #ffffff; color: #111111; border: 3px solid #111111; }
+
+/* "At a glance" panel: square, ink-dark glass */
+.hero-glance { border-radius: 0; background: rgba(17, 17, 17, 0.55); border: 2px solid rgba(243, 238, 227, 0.55);
+               backdrop-filter: none; -webkit-backdrop-filter: none; }
+.glance-title { font-family: "Space Mono", monospace; letter-spacing: 0.06em; }
+.glance-n { font-weight: 800; letter-spacing: -0.03em; }
+
+/* House motif: a round paper badge, top right of the hero */
+.hero-motif {
+  position: absolute; top: 1.5rem; right: 1.5rem; z-index: 3;
+  width: clamp(84px, 9vw, 120px); height: auto; aspect-ratio: 1; object-fit: contain;
+  background: #F3EEE3; border: 3px solid #111111; border-radius: 50%; padding: 14px;
+  box-shadow: 5px 5px 0 #aab0ff; transform: rotate(-6deg);
+}
+/* Leave the badge its own corner, clear of the glance panel */
+@media (min-width: 1001px) { .hero > .hero-top { padding-right: 8.5rem; } }
+@media (max-width: 1000px) { .hero { padding-top: 6.5rem !important; } }
+@media (max-width: 700px) {
+  .hero-motif { width: 64px; padding: 9px; top: 1rem; right: 1rem; box-shadow: 3px 3px 0 #aab0ff; }
+  .hero { padding-top: 5.5rem !important; }
+}
+
+/* Headline indicator tiles */
+.kpi-tile {
+  background: #ffffff; border: 2px solid #111111; border-top: 8px solid #3b3fc4; border-radius: 0;
+  box-shadow: 4px 4px 0 #111111; transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.kpi-tile:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #111111; }
+.kpi-big { color: #111111; letter-spacing: -0.03em; font-weight: 800; }
+.status-bar, .hbar-track, .hbar-fill { border-radius: 0; }
+
+/* Status chips: square, with a thin ink edge (colours unchanged) */
+.chip { border-radius: 0; border: 1.5px solid #111111; }
+
+/* Disclaimer banner */
+.disclaimer { background: #ffffff; border: 2px solid #111111; border-left: 8px solid #3b3fc4; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill:hover, .kpi-tile:hover { transform: none; }
+}
+
+/* ---------- Overview: hero, then stat boxes overlapping its bottom edge ----------
+   (matches the other portfolio sites; replaces the old "At a glance" panel) */
+.hero-wrap { display: block !important; flex: 1 1 auto !important; width: 100%; }
+.card:has(.hero) .card-body, .card:has(.hero) { overflow: visible !important; }
+.hero { height: auto !important; padding-bottom: 5.5rem !important; }
+.hero-glance { display: none !important; }
+.hero > .hero-top { padding-right: 0 !important; }
+.hero-text { max-width: 52rem; }
+.stat-row {
+  display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px;
+  position: relative; z-index: 4; margin: -3.5rem clamp(1rem, 4vw, 3rem) 0.5rem; flex: none !important;
+}
+.stat-box { display: block !important; background: #ffffff; border: 3px solid #111111; border-top: 10px solid #3b3fc4;
+            padding: 1rem 1.1rem; box-shadow: 6px 6px 0 #111111; }
+.stat-box:nth-child(2) { border-top-color: #7b80f2; }
+.stat-box:nth-child(3) { border-top-color: #2d3199; }
+.stat-box:nth-child(4) { border-top-color: #aab0ff; }
+.stat-box .num { display: block; font-size: 2.1rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: #111111; white-space: nowrap; }
+.stat-box .lab { display: block; font-size: 0.88rem; color: #3a352d; margin-top: 0.35rem; line-height: 1.4; }
+.dashboard-page .card:has(.kpi-grid) { margin-top: 0 !important; }
+@media (max-width: 900px) {
+  .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-box .num { font-size: 1.5rem; }
 }

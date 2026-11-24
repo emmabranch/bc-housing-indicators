@@ -1,12 +1,12 @@
 /* reports/report_card.css: one- to two-page municipal report card */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.bunny.net/css?family=bricolage-grotesque:400,700,800|space-mono:400,700&display=swap');
 :root { --ink: #0b0b0b; --ink-2: #52514e; --hair: #e1e0d9; --accent: #1f3b57; }
-body { color: var(--ink); font-size: 0.92rem; background: #f6f4ef;
-       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+body { color: var(--ink); font-size: 0.92rem; background: #F3EEE3;
+       font-family: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
        padding-top: 56px; }
 main.content { background: #ffffff; border-radius: 14px; padding: 1.2rem 1.8rem 1.4rem;
                box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 6px 18px rgba(16, 24, 40, 0.06); margin-top: 1rem; }
-h1, h2, .rc-title { font-family: "Fraunces", Georgia, serif; }
+h1, h2, .rc-title { font-weight: 800; letter-spacing: -0.03em; }
 
 /* Fixed navigation bar (matches the dashboard) */
 .rc-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 50px;
@@ -14,7 +14,7 @@ h1, h2, .rc-title { font-family: "Fraunces", Georgia, serif; }
           background: #0b2233; box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18); }
 .rc-nav a { color: #c9d6e0; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
 .rc-nav a:hover { color: #ffffff; }
-.rc-nav-brand { font-family: "Fraunces", Georgia, serif; font-weight: 800 !important; color: #ffffff !important;
+.rc-nav-brand { font-weight: 800 !important; color: #ffffff !important;
                 font-size: 1.05rem !important; white-space: nowrap; }
 .rc-nav-links { display: flex; gap: 1.1rem; flex-wrap: nowrap; overflow-x: auto; }
 .rc-jump { margin-left: auto; color: #aab0ff; font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
@@ -88,4 +88,26 @@ h2 { font-size: 1.15rem; color: var(--accent); border-bottom: none; margin-top: 
   .rc-jump select { flex: 1; min-width: 0; max-width: 190px; padding: 4px 6px; }
   .rc-table { display: block; overflow-x: auto; }
   .rc-target-figs { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* ---------- Portfolio edition of the Flash sheet look (November 2026) ----------
+   Kept last so it wins: paper navbar with an ink underline, the report on a
+   white card with an ink outline, square corners, and indigo accents. */
+main.content { border: 3px solid #111111; border-radius: 0; box-shadow: 8px 8px 0 #111111; }
+.rc-nav { background: #F3EEE3; border-bottom: 3px solid #111111; box-shadow: none; }
+.rc-nav a { color: #111111; font-weight: 700; }
+.rc-nav a:hover { color: #111111; text-decoration: underline; }
+.rc-nav-brand { color: #111111 !important; letter-spacing: -0.02em; }
+.rc-jump { color: #111111; }
+.rc-jump select { background: #ffffff; color: #111111; border: 2px solid #111111; border-radius: 0; }
+h2 { color: #111111; background: linear-gradient(#3b3fc4, #3b3fc4) no-repeat left bottom / 56px 6px; }
+.rc-kicker, .rc-unit { font-family: "Space Mono", monospace; }
+.rc-disclaimer { background: #ffffff; border: 2px solid #111111; border-left: 8px solid #3b3fc4; }
+.rc-fig { border: 2px solid #111111; border-radius: 0; background: #ffffff; box-shadow: 3px 3px 0 #111111; }
+.rc-fig-n { font-weight: 800; letter-spacing: -0.03em; }
+.chip { border-radius: 0; border: 1.5px solid #111111; }
+@media print {
+  main.content { border: none; box-shadow: none; }
+  .rc-fig { box-shadow: none; }
 }

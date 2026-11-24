@@ -1,20 +1,26 @@
 /*-- scss:defaults --*/
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap');
+/* BC housing indicators dashboard: the portfolio's "Flash sheet" look
+   (paper, ink outlines, hard shadows, Bricolage Grotesque and Space Mono),
+   with this project's indigo as the accent. The dashboard has its own layout,
+   so it does not use the shared brand.scss; fonts load in index.qmd's header. */
+$web-font-path: false;
+$primary:    #2340FF;
+$secondary:  #5A544A;
+$body-bg:    #F3EEE3;
+$body-color: #111111;
+$link-color: #2340FF;
 
-$primary:    #1f4e79;
-$secondary:  #5b7083;
-$body-bg:    #f6f4ef;
-$body-color: #1f2a33;
-$link-color: #1f6fb2;
+$navbar-bg: #F3EEE3;
+$navbar-fg: #111111;
+$navbar-hl: #111111;
 
-$navbar-bg: #0b2233;
-$navbar-fg: #c9d6e0;
-$navbar-hl: #ffffff;
-
-$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$headings-font-family:   "Fraunces", Georgia, serif;
-$headings-font-weight:   700;
-$border-radius: 12px;
+$font-family-sans-serif: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-family-monospace:  "Space Mono", ui-monospace, monospace;
+$headings-font-family:   "Bricolage Grotesque", sans-serif;
+$headings-font-weight:   800;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
 
 /*-- scss:rules --*/
 
@@ -25,29 +31,44 @@ $border-radius: 12px;
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1030;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+  border-bottom: 3px solid #111111;
+  box-shadow: none;
 }
 body.quarto-dashboard { padding-top: 50px; }
 html { scroll-padding-top: 64px; }
-.navbar-title { font-family: $headings-font-family; font-weight: 800; letter-spacing: -0.01em; }
-.navbar .nav-link { font-weight: 500; }
-.navbar .nav-link.active { box-shadow: inset 0 -3px 0 #aab0ff; }
+#quarto-dashboard-header .navbar-title, .navbar-title { font-weight: 800 !important; letter-spacing: -0.02em; }
+.navbar .nav-link { font-weight: 700; color: #111111; }
+.navbar .nav-link.active { box-shadow: inset 0 -5px 0 #3b3fc4; }
+#quarto-dashboard-header .navbar-title-text, #quarto-dashboard-header .navbar-title-text a { font-weight: 800; letter-spacing: -0.02em; color: #111111; }
+/* Author name next to the title: a little gap and a thin divider, in Space Mono */
+#quarto-dashboard-header .navbar-author {
+  margin-left: 1.1rem !important; padding-left: 1.1rem;
+  border-left: 2px solid #111111;
+  font-family: "Space Mono", monospace; font-size: 0.8rem; font-weight: 700;
+}
+@media (max-width: 767.98px) { #quarto-dashboard-header .navbar-author { display: none; } }
+.navbar-brand .navbar-logo, .navbar-logo { max-height: 36px !important; height: 36px; width: auto; }
+@media (max-width: 575.98px) { .navbar-logo { display: none; } }
 
-/* ---------- Cards as soft panels ---------- */
+h1, h2, h3, h4 { letter-spacing: -0.03em; }
+a:focus-visible, button:focus-visible { outline: 3px solid #2340FF; outline-offset: 3px; }
+.anchorjs-link { display: none !important; }
+
+/* ---------- Cards: white, ink outline, hard shadow ---------- */
 .card {
-  border: none;
-  border-radius: 14px;
+  border: 2px solid #111111;
+  border-radius: 0;
   background: #ffffff;
-  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 6px 18px rgba(16, 24, 40, 0.06);
+  box-shadow: 4px 4px 0 #111111;
 }
 .card-header {
-  /* short gradient accent under each card title */
-  background: linear-gradient(90deg, #3b3fc4, #7b80f2) no-repeat left 1rem bottom 0.25rem / 44px 4px;
+  /* short, thick bar in the project colour under each card title */
+  background: linear-gradient(#3b3fc4, #3b3fc4) no-repeat left 1rem bottom 0.25rem / 56px 6px;
   padding-bottom: 0.85rem;
   border-bottom: none;
-  font-family: $headings-font-family;
-  font-weight: 700;
-  font-size: 1.08rem;
+  font-weight: 800;
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
   padding-top: 0.9rem;
 }
 
@@ -65,3 +86,12 @@ html { scroll-padding-top: 64px; }
 .dashboard-page .bslib-grid .bslib-grid { gap: 24px !important; }
 .card-header { padding: 1.1rem 1.5rem 1rem; background-position: left 1.5rem bottom 0.3rem; }
 .card-body { padding: 0.9rem 1.5rem 1.4rem; }
+
+/* Maps get the ink outline too */
+.card .leaflet-container { border: 2px solid #111111; }
+.leaflet-control-layers, .leaflet-bar, .info.legend { border: 2px solid #111111 !important; border-radius: 0 !important; box-shadow: 3px 3px 0 #111111 !important; }
+
+/* Anyone who turns motion off gets none */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

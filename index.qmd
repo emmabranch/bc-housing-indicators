@@ -1,16 +1,18 @@
 ---
 title: "BC Municipal Housing Indicators"
 resources:
-  - favicon.svg
+  - images/favicon.png
+  - images/motif.svg
 author: "Emma Branch"
 format:
   dashboard:
     orientation: rows
     scrolling: true
-    theme: [cosmo, theme.scss]
+    theme: [cosmo, brand, theme.scss]
+    logo: images/motif.svg
     css: styles.css
     include-in-header:
-      text: '<link rel="icon" type="image/svg+xml" href="favicon.svg">'
+      text: '<link rel="icon" type="image/png" href="images/favicon.png">'
     include-after-body:
       text: |
         <script>
@@ -63,7 +65,7 @@ latest_period <- setNames(framework$latest_period, framework$indicator_id)
 
 # Overview
 
-## Row {height="540px"}
+## Row {height="auto"}
 
 ```{r}
 #| label: hero
@@ -85,11 +87,11 @@ n_green_hto <- sum(munis_sc$indicator_id == "HTO_Y1" & munis_sc$status == "Green
 n_rated_hto <- sum(munis_sc$indicator_id == "HTO_Y1" & munis_sc$status %in% c("Green", "Amber", "Red"))
 
 bc_vac_latest <- bc_sc |> filter(indicator_id == "VAC")
-glance_item <- function(n, label) div(class = "glance-item", div(class = "glance-n", n), div(class = "glance-l", label))
+stat_box <- function(n, label) div(class = "stat-box", span(class = "num", n), span(class = "lab", label))
 
-wave <- HTML('<svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path></svg>')
-
+div(class = "hero-wrap",
 div(class = "hero",
+  tags$img(class = "hero-motif", src = "images/motif.svg", alt = ""),
   div(class = "hero-bg",
     HTML(sprintf('<svg viewBox="0 0 %d 1" preserveAspectRatio="none" role="img" aria-label="BC rental vacancy rate by year, %d to %d">%s</svg>',
                  n_yr, min(bc_vac_all$year), max(bc_vac_all$year), stripes))),
@@ -99,27 +101,26 @@ div(class = "hero",
       h1(class = "hero-title", "40 BC municipalities.", tags$br(),
          span(class = "hero-accent", "One documented housing scorecard.")),
       p(class = "hero-lede",
-        "Housing Supply Act targets, core housing need, affordability, rental vacancy, and new supply for every municipality with a Housing Target Order, compared with British Columbia. ",
-        sprintf("%d of %d municipalities assessed so far met their Year 1 housing target.", n_green_hto, n_rated_hto)),
+        "Housing Supply Act targets, core housing need, affordability, rental vacancy, and new supply for every municipality with a Housing Target Order, compared with British Columbia."),
       div(class = "hero-buttons",
         a(class = "btn-pill solid", href = "#scorecard", "Explore the scorecard"),
         a(class = "btn-pill ghost", href = "#map", "Open the map"),
         a(class = "btn-pill ghost", href = "reports/vancouver.html", "Example report card"))
-    ),
-    div(class = "hero-glance", `aria-label` = "At a glance",
-      div(class = "glance-title", "At a glance"),
-      glance_item(nrow(munis_sc |> distinct(geo_uid)), "municipalities with Housing Target Orders"),
-      glance_item(sprintf("%d of %d", n_green_hto, n_rated_hto), "met their Year 1 housing target"),
-      glance_item(fmt_value("VAC", bc_vac_latest$latest_value),
-                  sprintf("BC rental vacancy rate, October %d", bc_vac_latest$latest_year))
     )
   ),
   div(class = "hero-note", sprintf(
     "Background: BC rental vacancy rate, %d to %d, one stripe per year. Red = below the 3%% reference, blue = above.",
     min(bc_vac_all$year), max(bc_vac_all$year))),
   div(class = "hero-disclaimer",
-      "Built by Emma Branch from public data. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Thresholds are illustrative; see About."),
-  wave
+      "Built by Emma Branch from public data. Not affiliated with, produced for, or endorsed by BC Housing or the Government of British Columbia. Thresholds are illustrative; see About.")
+),
+div(class = "stat-row",
+  stat_box(nrow(munis_sc |> distinct(geo_uid)), "municipalities with Housing Target Orders"),
+  stat_box(sprintf("%d of %d", n_green_hto, n_rated_hto), "met their Year 1 housing target"),
+  stat_box(fmt_value("VAC", bc_vac_latest$latest_value),
+           sprintf("BC rental vacancy rate, October %d", bc_vac_latest$latest_year)),
+  stat_box(length(headline_ids), "headline indicators, each compared with BC or a target")
+)
 )
 ```
 
