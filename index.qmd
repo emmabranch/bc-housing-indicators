@@ -124,7 +124,7 @@ div(class = "stat-row",
 )
 ```
 
-## Row {height="590px"}
+## Row {height="auto"}
 
 ```{r}
 #| title: Headline indicators across the 40 municipalities with Housing Target Orders
@@ -270,7 +270,7 @@ div(
     tbl |> select(all_of(show_cols), everything()),
     columns = cols, pagination = FALSE, highlight = TRUE, compact = TRUE,
     searchable = TRUE, defaultSorted = list(hto_group = "asc"),
-    theme = reactableTheme(headerStyle = list(fontSize = "0.8rem", color = "#52514e"))
+    theme = reactableTheme(headerStyle = list(fontSize = "0.8rem", color = "#5A544A"))
   ),
   p(class = "muted small",
     "Click a municipality name for its printable report card. ✓ Green, ! Amber, ✕ Red, – No data, … Not yet assessed. † = latest value older than the most recent survey year (later years suppressed). Hover a value for year and data quality. Sparklines: dashed line on vacancy = 3% reference.")
@@ -308,11 +308,11 @@ for (id in headline_ids) {
   m <- m |> addPolygons(
     data = d, group = short_names[[id]],
     fillColor = unname(vapply(d$status, function(s) style_for(s)$fill, character(1))),
-    fillOpacity = 0.75, color = "#52514e", weight = 1,
+    fillOpacity = 0.75, color = "#5A544A", weight = 1,
     label = sprintf("%s: %s (%s)", d$municipality,
                     vapply(d$latest_value, function(v) fmt_value(id, v), character(1)), d$status),
     popup = unname(popups[d$geo_uid]),
-    highlightOptions = highlightOptions(weight = 3, color = "#0b0b0b", bringToFront = TRUE)
+    highlightOptions = highlightOptions(weight = 3, color = "#111111", bringToFront = TRUE)
   )
 }
 leg <- status_style |> filter(status %in% c("Green", "Amber", "Red", "No data", "Not yet assessed"))
@@ -320,7 +320,7 @@ m |>
   addLayersControl(baseGroups = unname(short_names[headline_ids]),
                    options = layersControlOptions(collapsed = FALSE)) |>
   addLegend("bottomleft", colors = leg$fill,
-            labels = paste(leg$icon, leg$status), opacity = 0.9, title = "Status") |>
+            labels = paste(leg$icon, leg$status), opacity = 0.75, title = "Status") |>  # opacity matches the fill
   setView(lng = -123.0, lat = 49.6, zoom = 7)
 ```
 
