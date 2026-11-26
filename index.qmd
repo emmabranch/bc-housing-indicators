@@ -401,6 +401,7 @@ I am new to housing data; this project was a way to learn the main public source
 - [Whales of the Salish Sea](https://emmabranch.github.io/salish-sea-whales/): more whales, or more watchers?
 - [Bike recall surveillance](https://emmabranch.github.io/bike-recall-surveillance/): which bike parts fail, and what is changing
 - [Gravel geometry explorer](https://emmabranch.github.io/gravel-geometry/): 24 gravel bikes compared and drawn to scale
+- [State of Scotland's Seas](https://emmabranch.github.io/scotland-seas-indicators/): an independent indicator report card for Scotland's seas
 
 [GitHub](https://github.com/emmabranch) · [LinkedIn](https://www.linkedin.com/in/embranch/) · emma.branch@gmail.com
 
